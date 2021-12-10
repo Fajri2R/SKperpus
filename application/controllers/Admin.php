@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User extends CI_Controller
+class Admin extends CI_Controller
 {
     public function __construct()
     {
@@ -18,7 +18,7 @@ class User extends CI_Controller
         $isi['content'] = 'Dashboard';
         $this->load->view('templates/header', $isi);
         $this->load->view('templates/sidebar', $isi);
-        $this->load->view('user/v_user', $isi);
+        $this->load->view('user/v_admin', $isi);
         $this->load->view('templates/footer');
     }
 }

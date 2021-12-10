@@ -6,12 +6,12 @@ class Auth extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library('form_validation');
         $this->load->model('m_anggota');
     }
 
     public function index()
     {
+        $this->goToDefaultPage();
         $this->form_validation->set_rules('username', 'Username', 'required|trim', [
             'required'      => 'Kamu belum menginput %s',
         ]);
@@ -37,19 +37,23 @@ class Auth extends CI_Controller
                             'role_id' => $user['role_id']
                         ];
                         $this->session->set_userdata($isi);
-                        redirect('user');
+                        if ($user['role_id'] == 1) {
+                            redirect('admin');
+                        } else {
+                            redirect('user');
+                        }
                     } else {
-                        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                        $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">
 						Password salah!</div>');
                         redirect('auth');
                     }
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                    $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">
 					Username belum diaktivasi!</div>');
                     redirect('auth');
                 }
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">
 				Username tidak terdaftar!</div>');
                 redirect('auth');
             }
@@ -58,6 +62,7 @@ class Auth extends CI_Controller
 
     public function register()
     {
+        $this->goToDefaultPage();
         $this->form_validation->set_rules('name', 'Nama', 'required|trim', [
             'required' => 'Kamu belum menginput %s'
         ]);
@@ -88,14 +93,14 @@ class Auth extends CI_Controller
         ]);
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
         if ($this->form_validation->run() == false) {
-            $data['title2'] = '<b>E</b>-Perpus';
-            $data['title'] = 'Membuat Akun Baru';
-            $data['id_anggota']     = $this->m_anggota->id_anggota();
-            $this->load->view('templates/auth_header', $data);
+            $isi['title2'] = '<b>E</b>-Perpus';
+            $isi['title'] = 'Membuat Akun Baru';
+            $isi['id_anggota']     = $this->m_anggota->id_anggota();
+            $this->load->view('templates/auth_header', $isi);
             $this->load->view('auth/v_register');
             $this->load->view('templates/auth_footer');
         } else {
-            $data = [
+            $isi = [
                 'name'          => ucwords(htmlspecialchars($this->input->post('name', true))),
                 'username'      => htmlspecialchars($this->input->post('username', true)),
                 'email'         => htmlspecialchars($this->input->post('email', true)),
@@ -105,13 +110,13 @@ class Auth extends CI_Controller
                 'is_active'     => 1,
                 'date_created'  => time(),
             ];
-            $this->db->insert('user', $data);
-            $data2 = [
+            $this->db->insert('user', $isi);
+            $isi2 = [
                 'id_anggota'     => $this->input->post('id_anggota'),
                 'jenkel'         => $this->input->post('jenkel'),
                 'no_hp'          => $this->input->post('no_hp'),
             ];
-            $this->db->insert('user_info', $data2);
+            $this->db->insert('user_info', $isi2);
 
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
             Akun berhasil dibuat
@@ -129,9 +134,18 @@ class Auth extends CI_Controller
         $this->load->view('templates/auth_footer', $isi);
     }
 
+    public function goToDefaultPage()
+    {
+        if ($this->session->userdata('role_id') == '1') {
+            redirect('admin');
+        } else if ($this->session->userdata('role_id') == '2') {
+            redirect('user');
+        }
+    }
+
     public function logout()
     {
-        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('username');
         $this->session->unset_userdata('role_id');
 
         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">

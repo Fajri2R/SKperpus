@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User extends CI_Controller
+class Profile extends CI_Controller
 {
     public function __construct()
     {
@@ -10,15 +10,16 @@ class User extends CI_Controller
             redirect('auth');
         }
     }
+
     public function index()
     {
         $isi['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
-        $isi['title'] = 'Dashboard';
+        $isi['title'] = 'Profil';
         $isi['title2'] = '<b>E</b>-Perpus';
         $isi['content'] = 'Dashboard';
         $this->load->view('templates/header', $isi);
         $this->load->view('templates/sidebar', $isi);
-        $this->load->view('user/v_user', $isi);
+        $this->load->view('user/v_profil', $isi);
         $this->load->view('templates/footer');
     }
 }
