@@ -27,7 +27,7 @@
                 <div class="icon">
                   <i class="far fa-user"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="#" class="small-box-footer">Info Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -42,7 +42,7 @@
                 <div class="icon">
                   <i class="fas fa-book"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="#" class="small-box-footer">Info Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -53,7 +53,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Collapsible Accordion</h3>
+                  <h3 class="card-title">VISI, MISI, DAN TUJUAN SATUAN PENDIDIKAN SMK MUHAMMADIYAH KOTA JAMBI</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -63,7 +63,7 @@
                       <div class="card-header">
                         <h4 class="card-title w-100">
                           <a class="d-block w-100" data-toggle="collapse" href="#collapseOne">
-                            Collapsible Group Item #1
+                            VISI SATUAN PENDIDIKAN
                           </a>
                         </h4>
                       </div>
@@ -83,11 +83,11 @@
                         </div>
                       </div>
                     </div>
-                    <div class="card card-danger">
+                    <div class="card card-warning">
                       <div class="card-header">
                         <h4 class="card-title w-100">
                           <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
-                            Collapsible Group Danger
+                            MISI SATUAN PENDIDIKAN
                           </a>
                         </h4>
                       </div>
@@ -111,7 +111,7 @@
                       <div class="card-header">
                         <h4 class="card-title w-100">
                           <a class="d-block w-100" data-toggle="collapse" href="#collapseThree">
-                            Collapsible Group Success
+                            TUJUAN PENDIDIKAN
                           </a>
                         </h4>
                       </div>

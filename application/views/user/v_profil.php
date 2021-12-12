@@ -7,12 +7,6 @@
                    <div class="col-sm-6">
                        <h1>Profile</h1>
                    </div>
-                   <div class="col-sm-6">
-                       <ol class="breadcrumb float-sm-right">
-                           <li class="breadcrumb-item"><a href="#">Home</a></li>
-                           <li class="breadcrumb-item active">User Profile</li>
-                       </ol>
-                   </div>
                </div>
            </div><!-- /.container-fluid -->
        </section>
@@ -28,28 +22,25 @@
                            <div class="card-body">
                                <div class="tab-content">
                                    <div class="text-center">
-                                       <img class="profile-user-img img-fluid img-circle" src="<?= base_url('assets/adminlte/') ?>dist/img/user4-128x128.jpg" alt="User profile picture">
+                                       <img class="profile-user-img img-fluid img-circle" src="<?= base_url('assets/img/') . $user['image'] ?>" alt="User profile picture">
                                    </div>
                                    <h3 class="profile-username text-center"><?= $user['name'] ?></h3>
                                    <p class="text-muted text-center"><?= $user['role_id'] == 1 ? 'Admin' : 'Member' ?></p>
                                    <ul class="list-group list-group-unbordered mb-3">
                                        <li class="list-group-item">
-                                           <b>Email</b> <a class="float-right">1,322</a>
+                                           <b>Email</b> <a class="float-right" style="color: black;"><?= $user['email'] ?></a>
                                        </li>
                                        <li class="list-group-item">
-                                           <b>Username</b> <a class="float-right">1,322</a>
+                                           <b>Username</b> <a class="float-right" style="color: black;"><?= $user['username'] ?></a>
                                        </li>
                                        <li class="list-group-item">
-                                           <b>Tanggal Lahir</b> <a class="float-right">13,287</a>
+                                           <b>Jenis Kelamin</b> <a class="float-right" style="color: black;"><?= $user['jenkel'] ?></a>
                                        </li>
                                        <li class="list-group-item">
-                                           <b>Jenis Kelamin</b> <a class="float-right">13,287</a>
+                                           <b>Nomor Whatsapp</b> <a class="float-right" style="color: black;"><?= $user['no_hp'] ?></a>
                                        </li>
                                        <li class="list-group-item">
-                                           <b>Nomor Whatsapp</b> <a class="float-right">543</a>
-                                       </li>
-                                       <li class="list-group-item">
-                                           <b>Alamat</b> <a class="float-right">13,287</a>
+                                           <b>Alamat</b> <a class="float-right" style="color: black;"><?= $user['alamat'] ?></a>
                                        </li>
                                    </ul>
                                </div>
@@ -73,36 +64,25 @@
                                        <div class="form-group row">
                                            <label for="inputId_anggota" class="col-sm-2 col-form-label">ID Anggota</label>
                                            <div class="col-sm-10">
-                                               <input type="text" class="form-control" id="inputId_anggota" placeholder="ID Anggota" readonly>
+                                               <input type="text" class="form-control" id="inputId_anggota" placeholder="ID Anggota" value="<?= $user['id_anggota'] ?>" readonly>
                                            </div>
                                        </div>
                                        <div class="form-group row">
                                            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                                            <div class="col-sm-10">
-                                               <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                               <input type="email" class="form-control" id="inputEmail" placeholder="Email" value="<?= $user['email'] ?>">
                                            </div>
                                        </div>
                                        <div class="form-group row">
                                            <label for="inputNo_HP" class="col-sm-2 col-form-label">Nomor Whatsapp</label>
                                            <div class="col-sm-10">
-                                               <input type="number" class="form-control" id="inputNo_HP" placeholder="Nomor Whatsapp (cth: 08xxxxx)">
-                                           </div>
-                                       </div>
-                                       <div class="form-group row">
-                                           <label for="inputNo_HP" class="col-sm-2 col-form-label">Tanggal Lahir</label>
-                                           <div class="col-sm-10">
-                                               <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                                   <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" />
-                                                   <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                                                       <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                                   </div>
-                                               </div>
+                                               <input type="number" class="form-control" id="inputNo_HP" placeholder="Nomor Whatsapp (cth: 08xxxxx)" value="<?= $user['no_hp'] ?>">
                                            </div>
                                        </div>
                                        <div class="form-group row">
                                            <label for="inputAlamat" class="col-sm-2 col-form-label">Alamat</label>
                                            <div class="col-sm-10">
-                                               <textarea class="form-control" id="inputAlamat" placeholder="Alamat"></textarea>
+                                               <textarea class="form-control" id="inputAlamat" placeholder="Alamat"><?= $user['alamat'] ?></textarea>
                                            </div>
                                        </div>
                                        <div class="form-group row">
@@ -111,7 +91,7 @@
                                                <div class="input-group">
                                                    <div class="custom-file">
                                                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                                                       <label class="custom-file-label" for="exampleInputFile">Choose file (Format: jpg, jpeg, png. Ukuran foto maksimal 512x512. Ukuran File Maks 2MB)</label>
+                                                       <label class="custom-file-label" for="exampleInputFile">Choose file (Format: jpg, jpeg, png. Ukuran foto max. 512x512. Ukuran file max. 2MB)</label>
                                                    </div>
                                                </div>
                                            </div>

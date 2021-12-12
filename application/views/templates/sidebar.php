@@ -69,7 +69,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi' || $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == '' ? 'menu-open' : '' ?>">
+                <!-- <li class="nav-item <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi' || $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == '' ? 'menu-open' : '' ?>">
                     <a href="#" class="nav-link <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi' || $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-chart-area"></i>
                         <p>
@@ -126,7 +126,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <li class="nav-header mt-2">Account Navigation</li>
                 <li class="nav-item">
                     <a href="<?= base_url('profile') ?>" class="nav-link <?= $this->uri->segment(1) == 'profile' ? 'active' : '' ?>">

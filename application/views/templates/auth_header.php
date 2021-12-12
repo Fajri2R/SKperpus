@@ -19,6 +19,8 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="<?= base_url('assets/adminlte/')  ?>plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/adminlte/')  ?>plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- Logo Favicon  -->
+    <link rel="icon" href="<?= base_url('assets/img/') ?>icon.png" type="image/gif">
 </head>
 
 <body class="hold-transition login-page">

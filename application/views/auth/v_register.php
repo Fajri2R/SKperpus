@@ -94,7 +94,7 @@
                 </div>
                 <div class="row">
                     <!-- /.col -->
-                    <div class="col-12">
+                    <div class="col-12 mb-2">
                         <button type="submit" class="btn btn-primary btn-block">Register</button>
                     </div>
                     <!-- /.col -->
