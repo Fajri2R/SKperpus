@@ -20,7 +20,7 @@
                         <!-- small box -->
                         <div class="small-box bg-primary">
                             <div class="inner">
-                                <h3>123</h3>
+                                <h3><?= $anggota ?></h3>
 
                                 <p>Jumlah Anggota</p>
                             </div>
@@ -35,7 +35,7 @@
                         <!-- small box -->
                         <div class="small-box bg-secondary">
                             <div class="inner">
-                                <h3>123</h3>
+                                <h3><?= $buku ?></h3>
 
                                 <p>Jumlah Buku</p>
                             </div>
@@ -50,7 +50,7 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>123</h3>
+                                <h3><?= $pinjam ?></h3>
 
                                 <p>Buku Yang Sudah Dipinjam</p>
                             </div>
@@ -65,7 +65,7 @@
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h3>123</h3>
+                                <h3><?= $kembali ?></h3>
 
                                 <p>Buku Yang Sudah Dikembalikan</p>
                             </div>

@@ -17,13 +17,13 @@
                 <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                 <li class="nav-header">Main Navigation</li>
                 <li class="nav-item">
-                    <a href="<?= $user['role_id'] == 1 ? base_url('admin') : base_url('user') ?>" class="nav-link <?= $this->uri->segment(1) == 'admin' || $this->uri->segment(1) == 'user' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
+                    <a href="<?= $user['role_id'] == 1 ? base_url('admin') : base_url('user') ?>" class="nav-link <?= $this->uri->segment(1) == 'admin' && $this->uri->segment(2) == '' ||  $this->uri->segment(1) == 'user' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="<?= base_url('admin/datauser') ?>" class="nav-link <?= $this->uri->segment(2) == 'datauser' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Data User</p>
                     </a>
@@ -69,8 +69,8 @@
                         </li>
                     </ul>
                 </li>
-                <!-- <li class="nav-item <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi' || $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == '' ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi' || $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-chart-area"></i>
                         <p>
                             Transaksi
@@ -79,7 +79,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('pengarang') ?>" class="nav-link <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
+                            <a href="" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Peminjaman</p>
                             </a>
@@ -92,8 +92,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi' || $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == '' ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi' || $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-file-alt"></i>
                         <p>
                             Laporan
@@ -102,7 +102,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('pengarang') ?>" class="nav-link <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
+                            <a href="" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Laporan Data Anggota</p>
                             </a>
@@ -126,7 +126,7 @@
                             </a>
                         </li>
                     </ul>
-                </li> -->
+                </li>
                 <li class="nav-header mt-2">Account Navigation</li>
                 <li class="nav-item">
                     <a href="<?= base_url('profile') ?>" class="nav-link <?= $this->uri->segment(1) == 'profile' ? 'active' : '' ?>">
