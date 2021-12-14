@@ -5,7 +5,7 @@
            <div class="container-fluid">
                <div class="row mb-2">
                    <div class="col-sm-6">
-                       <h1>Profile</h1>
+                       <h1><?= $content ?></h1>
                    </div>
                </div>
            </div><!-- /.container-fluid -->
@@ -27,9 +27,9 @@
                                    <h3 class="profile-username text-center"><?= $user['name'] ?></h3>
                                    <p class="text-muted text-center"><?= $user['role_id'] == 1 ? 'Admin' : 'Member' ?></p>
                                    <ul class="list-group list-group-unbordered mb-3">
-                                       <li class="list-group-item">
+                                       <!-- <li class="list-group-item">
                                            <b>Email</b> <a class="float-right" style="color: black;"><?= $user['email'] ?></a>
-                                       </li>
+                                       </li> -->
                                        <li class="list-group-item">
                                            <b>Username</b> <a class="float-right" style="color: black;"><?= $user['username'] ?></a>
                                        </li>
@@ -84,13 +84,13 @@
                                            <input type="text" class="form-control" id="inputUsername" placeholder="Username" value="<?= $user['username'] ?>" name="username" readonly>
                                        </div>
                                    </div>
-                                   <div class="form-group row">
+                                   <!-- <div class="form-group row">
                                        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                                        <div class="col-sm-10">
                                            <input type="text" class="form-control <?= form_error('email') ? 'is-invalid' : null ?>" id="inputEmail" placeholder="Email" value="<?= $user['email'] ?>" name="email">
                                            <?= form_error('email', '<span class="error invalid-feedback">', '</span>')  ?>
                                        </div>
-                                   </div>
+                                   </div> -->
                                    <div class="form-group row">
                                        <label for="inputNo_HP" class="col-sm-2 col-form-label">Nomor Whatsapp</label>
                                        <div class="col-sm-10">

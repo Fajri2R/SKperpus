@@ -35,15 +35,6 @@
                     <?= form_error('username', '<span class="error invalid-feedback">', '</span>')  ?>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control <?= form_error('email') ? 'is-invalid' : null ?>" placeholder="Email" id="email" name="email" value="<?= set_value('email') ?>">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-envelope fa-fw"></span>
-                        </div>
-                    </div>
-                    <?= form_error('email', '<span class="error invalid-feedback">', '</span>')  ?>
-                </div>
-                <div class="input-group mb-3">
                     <input type="password" style="border-right: 0;" class="form-control <?= form_error('password1') ? 'is-invalid' : null ?>" placeholder="Password" id="password1" name="password1">
                     <div class="input-group-append">
                         <div class="input-group-text" style="background-color: transparent;">

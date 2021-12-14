@@ -15,11 +15,16 @@
       <section class="content">
           <div class="container-fluid">
               <div class="row">
+                  <?php
+                    if (!empty($this->session->flashdata('pesan'))) { ?>
+                      <div class="alert alert-success" role="alert"><?= $this->session->flashdata('pesan'); ?></div>
+                  <?php }
+                    ?>
                   <div class="col-12">
                       <div class="card card-primary card-outline card-outline-tabs">
-                          <div class="card-header">
-                              <div class="col-md-2">
-                                  <a href="" class="btn btn-success btn-block"><i class="fas fa-plus"></i> &nbsp;&nbsp;Tambah Pengarang</a>
+                          <div class="card-header row">
+                              <div class="col-sm-2">
+                                  <a href="<?= base_url('admin/adduser') ?>" class="btn btn-success btn-flat"><i class="fas fa-plus"></i>&nbsp; Tambah User</a>
                               </div>
                           </div>
                           <div class="card-header p-0 border-bottom-0">
@@ -44,6 +49,7 @@
                                                   <th>Jenis Kelamin</th>
                                                   <th>Alamat</th>
                                                   <th>Nomor Whatsapp</th>
+                                                  <th>Aksi</th>
                                               </tr>
                                           </thead>
                                           <tbody>
@@ -51,12 +57,16 @@
                                                 $no = 1;
                                                 foreach ($dataanggota as $row) { ?>
                                                   <tr>
-                                                      <td><?= $no++ ?></td>
-                                                      <td><?= $row->id_anggota ?></td>
+                                                      <td style="width:5%;"><?= $no++ ?></td>
+                                                      <td style="width:10%;"><?= $row->id_anggota ?></td>
                                                       <td><?= $row->name ?></td>
                                                       <td><?= $row->jenkel ?></td>
                                                       <td><?= $row->alamat ?></td>
                                                       <td><?= $row->no_hp ?></td>
+                                                      <td>
+                                                          <a href="<?= base_url() ?>admin/edit/<?= $row->id_anggota; ?>" class="btn btn-success btn-xs"><i class="fas fa-edit"></i> Edit</a>
+                                                          <a href="<?= base_url() ?>admin/hapus/<?= $row->id_anggota; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus user ini?');"><i class="fas fa-trash"></i> Hapus</a>
+                                                      </td>
                                                   </tr>
                                               <?php }
                                                 ?>
@@ -69,6 +79,7 @@
                                                   <th>Jenis Kelamin</th>
                                                   <th>Alamat</th>
                                                   <th>Nomor Whatsapp</th>
+                                                  <th>Aksi</th>
                                               </tr>
                                           </tfoot>
                                       </table>
@@ -83,6 +94,7 @@
                                                   <th>Jenis Kelamin</th>
                                                   <th>Alamat</th>
                                                   <th>Nomor Whatsapp</th>
+                                                  <th>Aksi</th>
                                               </tr>
                                           </thead>
                                           <tbody>
@@ -90,12 +102,16 @@
                                                 $no = 1;
                                                 foreach ($dataadmin as $row) { ?>
                                                   <tr>
-                                                      <td><?= $no++ ?></td>
-                                                      <td><?= $row->id_anggota ?></td>
+                                                      <td style="width:5%;"><?= $no++ ?></td>
+                                                      <td style="width:10%;"><?= $row->id_anggota ?></td>
                                                       <td><?= $row->name ?></td>
                                                       <td><?= $row->jenkel ?></td>
                                                       <td><?= $row->alamat ?></td>
                                                       <td><?= $row->no_hp ?></td>
+                                                      <td>
+                                                          <a href="<?= base_url() ?>admin/edit/<?= $row->id_anggota; ?>" class="btn btn-success btn-xs"><i class="fas fa-edit"></i> Edit</a>
+                                                          <a href="<?= base_url() ?>admin/hapus/<?= $row->id_anggota; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus user ini?');"><i class="fas fa-trash"></i> Hapus</a>
+                                                      </td>
                                                   </tr>
                                               <?php }
                                                 ?>
@@ -108,6 +124,7 @@
                                                   <th>Jenis Kelamin</th>
                                                   <th>Alamat</th>
                                                   <th>Nomor Whatsapp</th>
+                                                  <th>Aksi</th>
                                               </tr>
                                           </tfoot>
                                       </table>

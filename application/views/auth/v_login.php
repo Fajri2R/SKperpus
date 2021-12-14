@@ -40,15 +40,15 @@
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>
                     <br><br>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <a href="<?= base_url('auth/register') ?>" class="btn btn-secondary btn-block">Register</a>
-                    </div>
+                    </div> -->
                     <!-- /.col -->
                 </div>
             </form>
-            <p class="mb-0" style="margin-top: 5px;">
+            <!-- <p class="mb-0" style="margin-top: 5px;">
                 <a href="<?= base_url('auth/lupapw') ?>">Lupa password?</a>
-            </p>
+            </p> -->
         </div>
         <!-- /.card-body -->
     </div>

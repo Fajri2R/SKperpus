@@ -6,7 +6,6 @@ class Profile extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_profile');
         if (!$this->session->userdata('username')) {
             redirect('auth');
         }
@@ -14,13 +13,13 @@ class Profile extends CI_Controller
 
     public function index()
     {
-        $isi['user'] = $this->m_profile->getDataUser();
+        $isi['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $isi['title'] = 'Profil';
         $isi['title2'] = '<b>E</b>-Perpus';
-        $isi['content'] = 'Dashboard';
+        $isi['content'] = 'Profile';
         $this->load->view('templates/header', $isi);
         $this->load->view('templates/sidebar', $isi);
-        $this->load->view('user/v_profil', $isi);
+        $this->load->view('user/v_profile', $isi);
         $this->load->view('templates/footer');
     }
 
@@ -28,29 +27,29 @@ class Profile extends CI_Controller
     {
 
         $isi['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
-        $this->form_validation->set_rules('no_hp', 'Nomor HP', 'required|trim', [
-            'required' => 'Kamu belum memasukkan %s'
+        $this->form_validation->set_rules('no_hp', 'Nomor HP', 'required|trim|min_length[10]', [
+            'required'      => 'Kamu belum menginput %s',
+            'min_length'    => 'Cek kembali Nomor HP yang diinput, min. 10 digit dimulai dari 0',
         ]);
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
-            'required' => 'Kamu belum menginput %s',
-            'valid_email' => 'Format %s salah',
-        ]);
+        // $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
+        //     'required' => 'Kamu belum menginput %s',
+        //     'valid_email' => 'Format %s salah',
+        // ]);
 
         if ($this->form_validation->run() == false) {
-            $isi['user'] = $this->m_profile->getDataUser();
+            $isi['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
             $isi['title'] = 'Profil';
             $isi['title2'] = '<b>E</b>-Perpus';
-            $isi['content'] = 'Dashboard';
+            $isi['content'] = 'Profile';
             $this->load->view('templates/header', $isi);
             $this->load->view('templates/sidebar', $isi);
-            $this->load->view('user/v_profil', $isi);
+            $this->load->view('user/v_profile', $isi);
             $this->load->view('templates/footer');
         } else {
-            $id_anggota = $this->input->post('id_anggota');
             $username = $this->input->post('username');
-            $email = $this->input->post('email');
-            $no_hp = $this->input->post('no_hp');
             $alamat = $this->input->post('alamat');
+            $no_hp = $this->input->post('no_hp');
+
 
             $upload_image = $_FILES['image']['name'];
             if ($upload_image) {
@@ -75,14 +74,10 @@ class Profile extends CI_Controller
                 }
             }
 
-            $this->db->set('email', $email);
+            $this->db->set('alamat', $alamat);
+            $this->db->set('no_hp', $no_hp);
             $this->db->where('username', $username);
             $this->db->update('user');
-
-            $this->db->set('no_hp', $no_hp);
-            $this->db->set('alamat', $alamat);
-            $this->db->where('id_anggota', $id_anggota);
-            $this->db->update('user_info');
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
                      Data berhasil diupdate
                        </div>');
