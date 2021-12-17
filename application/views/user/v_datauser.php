@@ -24,7 +24,7 @@
                       <div class="card card-primary card-outline card-outline-tabs">
                           <div class="card-header row">
                               <div class="col-sm-2">
-                                  <a href="<?= base_url('admin/adduser') ?>" class="btn btn-success btn-flat"><i class="fas fa-plus"></i>&nbsp; Tambah User</a>
+                                  <a href="<?= base_url('admin/adduser') ?>" class="btn btn-success btn-flat" style="border-top: green;"><i class="fas fa-plus"></i>&nbsp; Tambah User</a>
                               </div>
                           </div>
                           <div class="card-header p-0 border-bottom-0">

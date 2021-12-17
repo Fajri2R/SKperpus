@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= $title ?></title>
+    <title><?= $title ?> | E-Perpus</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -37,9 +37,30 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="fas fa-user-circle"></i>
+                        &nbsp;
+                        <?= $user['role_id'] == 1 ? 'Admin' : 'Member' ?>
+                        &nbsp;
+                        <i class="nav-icon fas fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+                        <a href="<?= base_url('profile') ?>" class="dropdown-item">
+                            <i class="fas fa-user mr-2 fa-fw"></i> Profil
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="<?= base_url('auth/logout') ?>" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt mr-2 fa-fw"></i> Logout
+                        </a>
+                    </div>
+                </li>
+            </ul>
         </nav>
-        <!-- /.navbar -->
 
+        <!-- /.navbar -->
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->

@@ -39,31 +39,31 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="<?= base_url('pengarang') ?>" class="nav-link <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="<?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == '' ? 'far fa-dot-circle' : 'far fa-circle' ?>  nav-icon"></i>
                                 <p>Pengarang</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../mailbox/compose.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('penerbit') ?>" class="nav-link <?= $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
+                                <i class="<?= $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == '' ? 'far fa-dot-circle' : 'far fa-circle' ?> nav-icon"></i>
                                 <p>Penerbit</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../mailbox/read-mail.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('noinduk') ?>" class="nav-link <?= $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
+                                <i class="<?= $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == '' ? 'far fa-dot-circle' : 'far fa-circle' ?> nav-icon"></i>
                                 <p>Nomor Induk</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../mailbox/read-mail.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('klasifikasi') ?>" class="nav-link <?= $this->uri->segment(1) == 'klasifikasi' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
+                                <i class="<?= $this->uri->segment(1) == 'klasifikasi' || $this->uri->segment(1) == '' ? 'far fa-dot-circle' : 'far fa-circle' ?> nav-icon"></i>
                                 <p>Klasifikasi</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../mailbox/read-mail.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('buku') ?>" class="nav-link <?= $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
+                                <i class="<?= $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == '' ? 'far fa-dot-circle' : 'far fa-circle' ?> nav-icon"></i>
                                 <p>Daftar Buku</p>
                             </a>
                         </li>
@@ -92,7 +92,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mb-2" style="border-bottom: 1px solid #4f5962;">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-file-alt"></i>
                         <p>
@@ -127,7 +127,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-header mt-2">Account Navigation</li>
+                <li class="nav-header">Account Navigation</li>
                 <li class="nav-item">
                     <a href="<?= base_url('profile') ?>" class="nav-link <?= $this->uri->segment(1) == 'profile' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-user"></i>

@@ -19,7 +19,7 @@
                       <div class="card">
                           <div class="card-header row">
                               <div class="col-sm-2">
-                                  <a href="" class="btn btn-success btn-flat"><i class="fas fa-plus"></i> &nbsp;&nbsp;Tambah Pengarang</a>
+                                  <a href="" class="btn btn-success btn-flat"><i class="fas fa-plus"></i> &nbsp;&nbsp;Tambah Nomor Induk</a>
                               </div>
                           </div>
                           <!-- /.card-header -->
