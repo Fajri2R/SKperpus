@@ -7,6 +7,7 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_admin');
+        $this->load->model('m_id');
         if (!$this->session->userdata('username')) {
             redirect('auth');
         }
@@ -138,7 +139,7 @@ class Admin extends CI_Controller
             $isi['title'] = 'Tambah User';
             $isi['title2'] = '<b>E</b>-Perpus';
             $isi['content'] = 'Tambah User';
-            $isi['id_anggota']     = $this->m_admin->id_anggota();
+            $isi['id_anggota']     = $this->m_id->id_anggota();
             $this->load->view('templates/header', $isi);
             $this->load->view('templates/sidebar', $isi);
             $this->load->view('user/v_adduser', $isi);

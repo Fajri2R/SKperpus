@@ -1,12 +1,11 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pengarang extends CI_Controller
+class Pengembalian extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_id');
         if (!$this->session->userdata('username')) {
             redirect('auth');
         }
@@ -14,13 +13,12 @@ class Pengarang extends CI_Controller
     public function index()
     {
         $isi['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
-        $isi['title'] = 'Data Pengarang';
+        $isi['title'] = 'Data Pengembalian';
         $isi['title2'] = '<b>E</b>-Perpus';
-        $isi['content'] = 'Daftar Data Pengarang';
-        $isi['datapengarang'] = $this->db->get('pengarang')->result();;
+        $isi['content'] = 'Daftar Data Pengembalian';
         $this->load->view('templates/header', $isi);
         $this->load->view('templates/sidebar', $isi);
-        $this->load->view('pengarang/v_pengarang', $isi);
+        $this->load->view('pengembalian/v_pengembalian', $isi);
         $this->load->view('templates/footer');
     }
 }
