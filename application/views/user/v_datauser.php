@@ -15,11 +15,6 @@
       <section class="content">
           <div class="container-fluid">
               <div class="row">
-                  <?php
-                    if (!empty($this->session->flashdata('pesan'))) { ?>
-                      <div class="alert alert-success" role="alert"><?= $this->session->flashdata('pesan'); ?></div>
-                  <?php }
-                    ?>
                   <div class="col-12">
                       <div class="card card-primary card-outline card-outline-tabs">
                           <div class="card-header row">
@@ -38,6 +33,7 @@
                               </ul>
                           </div>
                           <div class="card-body">
+                              <?= $this->session->flashdata('pesan'); ?>
                               <div class="tab-content" id="custom-tabs-four-tabContent">
                                   <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
                                       <table id="example2" class="table table-bordered table-striped">

@@ -24,21 +24,24 @@
                                    <div class="form-group row">
                                        <label for="inputPwLama" class="col-sm-4 col-form-label">Password Lama</label>
                                        <div class="col-sm-8">
-                                           <input type="password" class="form-control <?= form_error('pwold') ? 'is-invalid' : null ?>" id="inputPwLama" placeholder="Password Lama" value="" name="pwold">
+                                           <input type="password" class="form-control <?= form_error('pwold') ? 'is-invalid' : null ?>" id="password" placeholder="Password Lama" name="pwold">
+                                           <span class="fas fa-eye fa-fw  <?= form_error('pwold') ? 'eyepwer-icon' : 'eyepw-icon' ?>" id="click-eyepw"></span>
                                            <?= form_error('pwold', '<span class="error invalid-feedback">', '</span>')  ?>
                                        </div>
                                    </div>
                                    <div class="form-group row">
                                        <label for="inputPwBaru" class="col-sm-4 col-form-label">Password Baru</label>
                                        <div class="col-sm-8">
-                                           <input type="password" class="form-control <?= form_error('pwnew') ? 'is-invalid' : null ?>" id="inputPwBaru" placeholder="Password Baru" value="" name="pwnew">
+                                           <input type="password" class="form-control <?= form_error('pwnew') ? 'is-invalid' : null ?>" id="password1" placeholder="Password Baru" value="" name="pwnew">
+                                           <span class="fas fa-eye fa-fw <?= form_error('pwnew') ? 'eyepwer-icon' : 'eyepw-icon' ?>" id="click-eyepw1"></span>
                                            <?= form_error('pwnew', '<span class="error invalid-feedback">', '</span>')  ?>
                                        </div>
                                    </div>
                                    <div class="form-group row">
                                        <label for="inputKonfPwBaru" class="col-sm-4 col-form-label">Konfirmasi Password Baru</label>
                                        <div class="col-sm-8">
-                                           <input type="password" class="form-control <?= form_error('pwnew2') ? 'is-invalid' : null ?>" id="inputKonfPwBaru" placeholder="Konfirmasi Password Baru" value="" name="pwnew2">
+                                           <input type="password" class="form-control <?= form_error('pwnew2') ? 'is-invalid' : null ?>" id="password2" placeholder="Konfirmasi Password Baru" value="" name="pwnew2">
+                                           <span class="fas fa-eye fa-fw <?= form_error('pwnew2') ? 'eyepwer-icon' : 'eyepw-icon' ?>" id="click-eyepw2"></span>
                                            <?= form_error('pwnew2', '<span class="error invalid-feedback">', '</span>')  ?>
                                        </div>
                                    </div>

@@ -45,7 +45,7 @@
                                    <div class="form-group row">
                                        <label for="inputJenkel" class="col-sm-3 col-form-label">Jenis Kelamin</label>
                                        <div class="col-sm-9">
-                                           <select class="form-control select2" name="jenkel" id="inputJenkel">
+                                           <select class="form-control" name="jenkel" id="inputJenkel">
                                                <?php
                                                 if ($data['jenkel'] == "Laki-laki") { ?>
                                                    <option value="Laki-laki" selected> Laki-laki </option>

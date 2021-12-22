@@ -45,18 +45,20 @@
                                    <div class="form-group row">
                                        <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
                                        <div class="col-sm-5">
-                                           <input type="password" class="form-control <?= form_error('password1') ? 'is-invalid' : null ?>" placeholder="Password" id="password" name="password1">
+                                           <input type="password" class="form-control <?= form_error('password1') ? 'is-invalid' : null ?>" placeholder="Password" id="password1" name="password1">
+                                           <span class="fas fa-eye fa-fw <?= form_error('password1') ? 'eyepwer-icon' : 'eyepw-icon' ?>" id="click-eyepw1"></span>
                                            <?= form_error('password1', '<span class="error invalid-feedback">', '</span>')  ?>
                                        </div>
                                        <div class="col-sm-4">
                                            <input type="password" class="form-control <?= form_error('password2') ? 'is-invalid' : null ?>" placeholder="Konfirmasi Password" id="password2" name="password2">
+                                           <span class="fas fa-eye fa-fw <?= form_error('password2') ? 'eyepwer-icon' : 'eyepw-icon' ?>" id="click-eyepw2"></span>
                                            <?= form_error('password2', '<span class="error invalid-feedback">', '</span>')  ?>
                                        </div>
                                    </div>
                                    <div class="form-group row">
                                        <label for="inputUsername" class="col-sm-3 col-form-label">Jenis Kelamin</label>
                                        <div class="col-sm-9">
-                                           <select class="form-control select2 <?= form_error('jenkel') ? 'is-invalid' : null ?>" name="jenkel" id="jenkel">
+                                           <select class="form-control <?= form_error('jenkel') ? 'is-invalid' : null ?>" name="jenkel" id="jenkel" style="width: 100%;">
                                                <option value="">Pilih Jenis Kelamin</option>
                                                <option value="Laki-laki" <?= set_value('jenkel') == "Laki-laki" ? "selected" : null ?>> Laki-laki </option>
                                                <option value="Perempuan" <?= set_value('jenkel') == "Perempuan" ? "selected" : null ?>> Perempuan </option>
@@ -81,7 +83,7 @@
                                    <div class="form-group row">
                                        <label for="inputAlamat" class="col-sm-3 col-form-label">Role</label>
                                        <div class="col-sm-9">
-                                           <select class="form-control select2 <?= form_error('role_id') ? 'is-invalid' : null ?>" name="role_id" id="role_id">
+                                           <select class="form-control <?= form_error('role_id') ? 'is-invalid' : null ?>" name="role_id" id="role_id" style="width: 100%;">
                                                <option value="">Pilih</option>
                                                <option value="1" <?= set_value('role_id') == "1" ? "selected" : null ?>> Admin </option>
                                                <option value="2" <?= set_value('role_id') == "2" ? "selected" : null ?>> Member </option>

@@ -24,6 +24,10 @@
 <script src="<?= base_url('assets/adminlte/')  ?>plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="<?= base_url('assets/adminlte/')  ?>plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?= base_url('assets/adminlte/')  ?>plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- Select2 -->
+<script src="<?= base_url('assets/adminlte/')  ?>plugins/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="<?= base_url('assets/adminlte/')  ?>plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('assets/adminlte/')  ?>dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->

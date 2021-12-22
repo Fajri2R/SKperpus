@@ -19,39 +19,43 @@
                       <div class="card">
                           <div class="card-header row">
                               <div class="col-sm-2">
-                                  <a href="" class="btn btn-success btn-flat"><i class="fas fa-plus"></i> &nbsp;&nbsp;Tambah Penerbit</a>
+                                  <a href="<?= base_url('penerbit/addPN') ?>" class="btn btn-success btn-flat"><i class="fas fa-plus"></i> &nbsp;&nbsp;Tambah Penerbit</a>
                               </div>
                           </div>
                           <!-- /.card-header -->
                           <div class="card-body">
+                              <?= $this->session->flashdata('pesan'); ?>
                               <table id="example2" class="table table-bordered table-striped">
                                   <thead>
                                       <tr>
-                                          <th>Rendering engine</th>
-                                          <th>Browser</th>
-                                          <th>Platform(s)</th>
-                                          <th>Engine version</th>
-                                          <th>CSS grade</th>
+                                          <th>No.</th>
+                                          <th>ID Penerbit</th>
+                                          <th>Nama Penerbit</th>
+                                          <th>Aksi</th>
                                       </tr>
                                   </thead>
                                   <tbody>
-                                      <tr>
-                                          <td>Trident</td>
-                                          <td>Internet
-                                              Explorer 4.0
-                                          </td>
-                                          <td>Win 95+</td>
-                                          <td> 4</td>
-                                          <td>X</td>
-                                      </tr>
+                                      <?php
+                                        $no = 1;
+                                        foreach ($datapenerbit as $row) { ?>
+                                          <tr>
+                                              <td style="width:5%;"><?= $no++ ?></td>
+                                              <td style="width:15%;"><?= $row->id_penerbit ?></td>
+                                              <td><?= $row->nama_penerbit ?></td>
+                                              <td style="width: 10%;">
+                                                  <a href="<?= base_url() ?>penerbit/edit/<?= $row->id_penerbit; ?>" class="btn btn-success btn-xs"><i class="fas fa-edit"></i> Edit</a>
+                                                  <a href="<?= base_url() ?>penerbit/hapus/<?= $row->id_penerbit; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus data penerbit ini?');"><i class="fas fa-trash"></i> Hapus</a>
+                                              </td>
+                                          </tr>
+                                      <?php }
+                                        ?>
                                   </tbody>
                                   <tfoot>
                                       <tr>
-                                          <th>Rendering engine</th>
-                                          <th>Browser</th>
-                                          <th>Platform(s)</th>
-                                          <th>Engine version</th>
-                                          <th>CSS grade</th>
+                                          <th>No.</th>
+                                          <th>ID Penerbit</th>
+                                          <th>Nama Penerbit</th>
+                                          <th>Aksi</th>
                                       </tr>
                                   </tfoot>
                               </table>

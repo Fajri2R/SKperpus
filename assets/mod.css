@@ -1,0 +1,51 @@
+input#moddtpck {
+	display: inline-block;
+	position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+	background: transparent;
+	bottom: 0;
+	color: transparent;
+	cursor: pointer;
+	height: auto;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: auto;
+}
+
+.select2-selection__rendered {
+	line-height: 31px !important;
+	padding-left: 3px !important;
+
+}
+
+.select2-container .select2-selection--single {
+	height: 35px !important;
+	border: 1px solid #ced4da !important;
+
+}
+
+.select2-selection__arrow {
+	height: 34px !important;
+}
+
+.eyepw-icon {
+	float: right;
+	margin-top: -26px;
+	margin-right: 10px;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.eyepwer-icon {
+	float: right;
+	margin-top: -26px;
+	margin-right: 35px;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}

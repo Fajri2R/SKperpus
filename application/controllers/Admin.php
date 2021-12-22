@@ -56,7 +56,7 @@ class Admin extends CI_Controller
     {
         $isi['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         if ($this->session->userdata('role_id') == '1') {
-            $isi['title'] = 'Edit Data User';
+            $isi['title'] = 'Edit User';
             $isi['title2'] = '<b>E</b>-Perpus';
             $isi['content'] = 'Edit Data User';
             $isi['data'] = $this->m_admin->edit($id);
@@ -113,7 +113,9 @@ class Admin extends CI_Controller
 
             $query = $this->m_admin->update($id_anggota, $data);
             if ($query = true) {
-                $this->session->set_flashdata('pesan', 'Data Berhasil di Update');
+                $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+                Akun berhasil diupdate
+              </div>');
                 redirect('admin/datauser');
             }
         }
@@ -124,7 +126,9 @@ class Admin extends CI_Controller
         if ($this->session->userdata('role_id') == '1') {
             $query = $this->m_admin->hapus($id);
             if ($query = true) {
-                $this->session->set_flashdata('pesan', 'Data Berhasil di Hapus');
+                $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">
+            Akun berhasil dihapus
+          </div>');
                 redirect('admin/datauser');
             }
         } else {
@@ -190,7 +194,7 @@ class Admin extends CI_Controller
                 $isi['title'] = 'Tambah User';
                 $isi['title2'] = '<b>E</b>-Perpus';
                 $isi['content'] = 'Tambah User';
-                $isi['id_anggota']     = $this->m_admin->id_anggota();
+                $isi['id_anggota']     = $this->m_id->id_anggota();
                 $this->load->view('templates/header', $isi);
                 $this->load->view('templates/sidebar', $isi);
                 $this->load->view('user/v_adduser', $isi);

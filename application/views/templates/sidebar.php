@@ -23,7 +23,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('admin/datauser') ?>" class="nav-link <?= $this->uri->segment(2) == 'datauser' ? 'active' : '' ?>">
+                    <a href="<?= base_url('admin/datauser') ?>" class="nav-link <?= $this->uri->segment(2) == 'datauser' || $this->uri->segment(2) == 'adduser' || $this->uri->segment(1) == 'admin' && $this->uri->segment(2) == 'edit' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Data User</p>
                     </a>
@@ -49,7 +49,7 @@
                                 <p>Penerbit</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="<?= base_url('noinduk') ?>" class="nav-link <?= $this->uri->segment(1) == 'noinduk'   ? 'active' : '' ?>">
                                 <i class="<?= $this->uri->segment(1) == 'noinduk'   ? 'far fa-dot-circle' : 'far fa-circle' ?> nav-icon"></i>
                                 <p>Nomor Induk</p>
@@ -60,7 +60,7 @@
                                 <i class="<?= $this->uri->segment(1) == 'klasifikasi'   ? 'far fa-dot-circle' : 'far fa-circle' ?> nav-icon"></i>
                                 <p>Klasifikasi</p>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a href="<?= base_url('buku') ?>" class="nav-link <?= $this->uri->segment(1) == 'buku'   ? 'active' : '' ?>">
                                 <i class="<?= $this->uri->segment(1) == 'buku'   ? 'far fa-dot-circle' : 'far fa-circle' ?> nav-icon"></i>
@@ -177,13 +177,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="<?= base_url('buku') ?>" class="nav-link <?= $this->uri->segment(1) == 'buku' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-book"></i>
                         <p>Daftar Buku</p>
                     </a>
                 </li>
-                <li class="nav-item <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi' || $this->uri->segment(1) == 'buku'   ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi' || $this->uri->segment(1) == 'buku'   ? 'active' : '' ?>">
+                <li class="nav-item <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi'   ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi'   ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-history"></i>
                         <p>
                             Riwayat
