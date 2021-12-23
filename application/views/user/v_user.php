@@ -27,7 +27,7 @@
                 <div class="icon">
                   <i class="far fa-user"></i>
                 </div>
-                <a href="#" class="small-box-footer">Info Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="<?= base_url('profile') ?>" class="small-box-footer">Info Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -42,7 +42,7 @@
                 <div class="icon">
                   <i class="fas fa-book"></i>
                 </div>
-                <a href="#" class="small-box-footer">Info Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="<?= base_url('buku') ?>" class="small-box-footer">Info Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->

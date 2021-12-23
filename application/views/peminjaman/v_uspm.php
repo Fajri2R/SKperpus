@@ -23,44 +23,37 @@
                                   <thead>
                                       <tr>
                                           <th>No.</th>
-                                          <th>ID Pengembalian</th>
-                                          <th>ID Anggota</th>
+                                          <th>ID Peminjaman</th>
                                           <th>Nama Peminjam</th>
                                           <th>Buku</th>
                                           <th>Tanggal Pinjam</th>
                                           <th>Tanggal Kembali</th>
-                                          <th>Tanggal Dikembalikan</th>
-                                          <th>Denda</th>
-                                          <th>Aksi</th>
+                                          <th>Status</th>
                                       </tr>
                                   </thead>
                                   <tbody>
                                       <?php
                                         $no = 1;
-                                        foreach ($datapb as $row) { ?>
+                                        foreach ($datapm as $row) {
+                                            $tgl_kembali = new DateTime($row->tgl_kembali);
+                                            $tgl_sekarang = new DateTime();
+                                            $selisih = $tgl_sekarang->diff($tgl_kembali)->format("%a");
+                                        ?>
                                           <tr>
-                                              <td style="width:2%;"><?= $no++ ?></td>
-                                              <td style="width:5%;"><?= $row->id_pengembalian; ?></td>
-                                              <td style="width:5%;"><?= $row->id_anggota; ?></td>
+                                              <td style="width:5%;"><?= $no++ ?></td>
+                                              <td style="width:10%;"><?= $row->id_peminjaman; ?></td>
                                               <td><?= $row->name; ?></td>
                                               <td><?= $row->judul_buku; ?></td>
-                                              <td style="width: 8%;"><?= shortdate_indo($row->tgl_pinjam) ?></td>
-                                              <td style="width: 8%;"><?= shortdate_indo($row->tgl_kembali) ?></td>
-                                              <td style="width: 8%;"><?= shortdate_indo($row->tgl_kembalikan) ?></td>
+                                              <td style="width: 15%;"><?= shortdate_indo($row->tgl_pinjam) ?></td>
+                                              <td style="width: 15%;"><?= shortdate_indo($row->tgl_kembali) ?></td>
                                               <td style="width: 10%;">
                                                   <?php
-                                                    $tgl_kembali = new DateTime($row->tgl_kembali);
-                                                    $tgl_kembalikan = new DateTime($row->tgl_kembalikan);
-                                                    $selisih = $tgl_kembalikan->diff($tgl_kembali)->format("%a");
-                                                    if ($tgl_kembali >= $tgl_kembalikan or $selisih == 0) {
-                                                        echo "Tidak ada denda";
+                                                    if ($tgl_kembali >= $tgl_sekarang or $selisih == 0) {
+                                                        echo "<span class='badge badge-warning'>Belum di Kembalikan</span>";
                                                     } else {
-                                                        echo rp(1000 * $selisih);
+                                                        echo "Telat <b style = 'color:red;'>" . $selisih . "</b> Hari <br> <span class='label label-danger'> Denda Perhari = 1.000";
                                                     }
                                                     ?>
-                                              </td>
-                                              <td style="width:6%">
-                                                  <a href="<?= base_url() ?>pengembalian/hapus/<?= $row->id_pengembalian; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin mau menghapus data pengembalian ini?');"><i class="fa fa-trash"></i> Hapus</a>
                                               </td>
                                           </tr>
                                       <?php }
@@ -69,15 +62,12 @@
                                   <tfoot>
                                       <tr>
                                           <th>No.</th>
-                                          <th>ID Pengembalian</th>
-                                          <th>ID Anggota</th>
+                                          <th>ID Peminjaman</th>
                                           <th>Nama Peminjam</th>
                                           <th>Buku</th>
                                           <th>Tanggal Pinjam</th>
                                           <th>Tanggal Kembali</th>
-                                          <th>Tanggal Dikembalikan</th>
-                                          <th>Denda</th>
-                                          <th>Aksi</th>
+                                          <th>Status</th>
                                       </tr>
                                   </tfoot>
                               </table>

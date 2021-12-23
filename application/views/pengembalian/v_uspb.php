@@ -23,15 +23,12 @@
                                   <thead>
                                       <tr>
                                           <th>No.</th>
-                                          <th>ID Pengembalian</th>
-                                          <th>ID Anggota</th>
                                           <th>Nama Peminjam</th>
                                           <th>Buku</th>
                                           <th>Tanggal Pinjam</th>
                                           <th>Tanggal Kembali</th>
                                           <th>Tanggal Dikembalikan</th>
                                           <th>Denda</th>
-                                          <th>Aksi</th>
                                       </tr>
                                   </thead>
                                   <tbody>
@@ -39,14 +36,12 @@
                                         $no = 1;
                                         foreach ($datapb as $row) { ?>
                                           <tr>
-                                              <td style="width:2%;"><?= $no++ ?></td>
-                                              <td style="width:5%;"><?= $row->id_pengembalian; ?></td>
-                                              <td style="width:5%;"><?= $row->id_anggota; ?></td>
+                                              <td style="width:5%;"><?= $no++ ?></td>
                                               <td><?= $row->name; ?></td>
                                               <td><?= $row->judul_buku; ?></td>
-                                              <td style="width: 8%;"><?= shortdate_indo($row->tgl_pinjam) ?></td>
-                                              <td style="width: 8%;"><?= shortdate_indo($row->tgl_kembali) ?></td>
-                                              <td style="width: 8%;"><?= shortdate_indo($row->tgl_kembalikan) ?></td>
+                                              <td style="width: 10%;"><?= shortdate_indo($row->tgl_pinjam) ?></td>
+                                              <td style="width: 10%;"><?= shortdate_indo($row->tgl_kembali) ?></td>
+                                              <td style="width: 10%;"><?= shortdate_indo($row->tgl_kembalikan) ?></td>
                                               <td style="width: 10%;">
                                                   <?php
                                                     $tgl_kembali = new DateTime($row->tgl_kembali);
@@ -59,9 +54,6 @@
                                                     }
                                                     ?>
                                               </td>
-                                              <td style="width:6%">
-                                                  <a href="<?= base_url() ?>pengembalian/hapus/<?= $row->id_pengembalian; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin mau menghapus data pengembalian ini?');"><i class="fa fa-trash"></i> Hapus</a>
-                                              </td>
                                           </tr>
                                       <?php }
                                         ?>
@@ -69,15 +61,12 @@
                                   <tfoot>
                                       <tr>
                                           <th>No.</th>
-                                          <th>ID Pengembalian</th>
-                                          <th>ID Anggota</th>
                                           <th>Nama Peminjam</th>
                                           <th>Buku</th>
                                           <th>Tanggal Pinjam</th>
                                           <th>Tanggal Kembali</th>
                                           <th>Tanggal Dikembalikan</th>
                                           <th>Denda</th>
-                                          <th>Aksi</th>
                                       </tr>
                                   </tfoot>
                               </table>

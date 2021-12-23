@@ -73,4 +73,40 @@ class M_id extends CI_Model
         $kodejadi = "BK" . $kodemax;
         return $kodejadi;
     }
+
+    public function id_peminjaman()
+    {
+        $this->db->select('RIGHT(peminjaman.id_peminjaman,3) as kode', FALSE);
+        $this->db->order_by('id_peminjaman', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('peminjaman');
+        if ($query->num_rows() <> 0) {
+            $data = $query->row();
+            $kode = intval($data->kode) + 1;
+        } else {
+            $kode = 1;
+        }
+
+        $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT);
+        $kodejadi = "PM" . $kodemax;
+        return $kodejadi;
+    }
+
+    public function id_pengembalian()
+    {
+        $this->db->select('RIGHT(pengembalian.id_pengembalian,3) as kode', FALSE);
+        $this->db->order_by('id_pengembalian', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('pengembalian');
+        if ($query->num_rows() <> 0) {
+            $data = $query->row();
+            $kode = intval($data->kode) + 1;
+        } else {
+            $kode = 1;
+        }
+
+        $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT);
+        $kodejadi = "PB" . $kodemax;
+        return $kodejadi;
+    }
 }

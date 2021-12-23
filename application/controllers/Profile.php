@@ -27,9 +27,10 @@ class Profile extends CI_Controller
     {
 
         $isi['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
-        $this->form_validation->set_rules('no_hp', 'Nomor HP', 'required|trim|min_length[10]', [
+        $this->form_validation->set_rules('no_hp', 'Nomor HP', 'required|trim|min_length[10]|max_length[13]', [
             'required'      => 'Kamu belum menginput %s',
-            'min_length'    => 'Cek kembali Nomor HP yang diinput, min. 10 digit dimulai dari 0',
+            'min_length'    => 'Cek kembali Nomor HP yang diinput, min. 10 digit dimulai dari 0 dan max. 13 digit',
+            'max_length'    => 'Cek kembali Nomor HP yang diinput, min. 10 digit dimulai dari 0 dan max. 13 digit',
         ]);
         // $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
         //     'required' => 'Kamu belum menginput %s',

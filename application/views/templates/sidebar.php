@@ -182,8 +182,8 @@
                         <p>Daftar Buku</p>
                     </a>
                 </li>
-                <li class="nav-item <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi'   ? 'menu-open' : '' ?>">
-                    <a href="#" class="nav-link <?= $this->uri->segment(1) == 'pengarang' || $this->uri->segment(1) == 'penerbit' || $this->uri->segment(1) == 'noinduk' || $this->uri->segment(1) == 'klasifikasi'   ? 'active' : '' ?>">
+                <li class="nav-item <?= $this->uri->segment(1) == 'peminjaman' || $this->uri->segment(1) == 'pengembalian' ? 'menu-open' : '' ?>" style="border-bottom: 1px solid #4f5962;">
+                    <a href="#" class="nav-link <?= $this->uri->segment(1) == 'peminjaman' || $this->uri->segment(1) == 'pengembalian' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-history"></i>
                         <p>
                             Riwayat
@@ -192,13 +192,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('pengarang') ?>" class="nav-link <?= $this->uri->segment(1) == 'pengarang'   ? 'active' : '' ?>">
+                            <a href="<?= base_url('peminjaman') ?>" class="nav-link <?= $this->uri->segment(1) == 'peminjaman'   ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Peminjaman</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../mailbox/compose.html" class="nav-link">
+                            <a href="<?= base_url('pengembalian') ?>" class="nav-link <?= $this->uri->segment(1) == 'pengembalian'   ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Pengembalian</p>
                             </a>

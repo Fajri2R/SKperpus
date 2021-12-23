@@ -180,9 +180,10 @@ class Admin extends CI_Controller
         $this->form_validation->set_rules('jenkel', 'Jenis Kelamin', 'required', [
             'required'      => 'Kamu belum memilih %s',
         ]);
-        $this->form_validation->set_rules('no_hp', 'Nomor HP', 'required|trim|min_length[10]', [
+        $this->form_validation->set_rules('no_hp', 'Nomor HP', 'required|trim|min_length[10]|max_length[13]', [
             'required'      => 'Kamu belum menginput %s',
-            'min_length'    => 'Cek kembali Nomor HP yang diinput, min. 10 digit dimulai dari 0',
+            'min_length'    => 'Cek kembali Nomor HP yang diinput, min. 10 digit dimulai dari 0 dan max. 13 digit',
+            'max_length'    => 'Cek kembali Nomor HP yang diinput, min. 10 digit dimulai dari 0 dan max. 13 digit',
         ]);
         $this->form_validation->set_rules('role_id', 'Role', 'required', [
             'required'      => 'Kamu belum memilih %s',
