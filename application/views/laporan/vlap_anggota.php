@@ -17,9 +17,15 @@
               <div class="row">
                   <div class="col-12">
                       <div class="card">
-                          <div class="card-header row">
+                          <div class="card-header row justify-content-end">
                               <div class="col-sm-2">
-                                  <a href="" class="btn btn-success btn-flat"><i class="fas fa-plus"></i> &nbsp;&nbsp;Tambah Peminjaman</a>
+                                  <a href="<?= base_url('laporan/dataanggota') ?>" class="btn btn-warning btn-flat btn-block"><i class="fas fa-sync-alt"></i> &nbsp;&nbsp;Refresh</a>
+                              </div>
+                              <div class="col-sm-2">
+                                  <a href="<?= base_url('laporan/test') ?>" class="btn btn-warning btn-flat btn-block"><i class="fas fa-sync-alt"></i> &nbsp;&nbsp;TEST</a>
+                              </div>
+                              <div class="col-sm-2">
+                                  <a href="<?= base_url('laporan/pdf_dagg') ?>" class="btn btn-danger btn-flat btn-block"><i class="far fa-file-pdf"></i> &nbsp;&nbsp;Cetak Laporan</a>
                               </div>
                           </div>
                           <!-- /.card-header -->
@@ -27,31 +33,37 @@
                               <table id="example2" class="table table-bordered table-striped">
                                   <thead>
                                       <tr>
-                                          <th>Rendering engine</th>
-                                          <th>Browser</th>
-                                          <th>Platform(s)</th>
-                                          <th>Engine version</th>
-                                          <th>CSS grade</th>
+                                          <th>No.</th>
+                                          <th>ID Anggota</th>
+                                          <th>Nama Anggota</th>
+                                          <th>Jenis Kelamin</th>
+                                          <th>Alamat</th>
+                                          <th>Nomor Whatsapp</th>
                                       </tr>
                                   </thead>
                                   <tbody>
-                                      <tr>
-                                          <td>Trident</td>
-                                          <td>Internet
-                                              Explorer 4.0
-                                          </td>
-                                          <td>Win 95+</td>
-                                          <td> 4</td>
-                                          <td>X</td>
-                                      </tr>
+                                      <?php
+                                        $no = 1;
+                                        foreach ($dataanggota as $row) { ?>
+                                          <tr>
+                                              <td style="width:5%;"><?= $no++ ?></td>
+                                              <td style="width:10%;"><?= $row->id_anggota ?></td>
+                                              <td><?= $row->name ?></td>
+                                              <td><?= $row->jenkel ?></td>
+                                              <td><?= $row->alamat ?></td>
+                                              <td><?= $row->no_hp ?></td>
+                                          </tr>
+                                      <?php }
+                                        ?>
                                   </tbody>
                                   <tfoot>
                                       <tr>
-                                          <th>Rendering engine</th>
-                                          <th>Browser</th>
-                                          <th>Platform(s)</th>
-                                          <th>Engine version</th>
-                                          <th>CSS grade</th>
+                                          <th>No.</th>
+                                          <th>ID Anggota</th>
+                                          <th>Nama</th>
+                                          <th>Jenis Kelamin</th>
+                                          <th>Alamat</th>
+                                          <th>Nomor Whatsapp</th>
                                       </tr>
                                   </tfoot>
                               </table>
