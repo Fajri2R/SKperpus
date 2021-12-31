@@ -193,13 +193,13 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="<?= base_url('peminjaman') ?>" class="nav-link <?= $this->uri->segment(1) == 'peminjaman'   ? 'active' : '' ?>">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="<?= $this->uri->segment(1) == 'peminjaman'   ? 'far fa-dot-circle' : 'far fa-circle' ?> nav-icon"></i>
                                 <p>Peminjaman</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="<?= base_url('pengembalian') ?>" class="nav-link <?= $this->uri->segment(1) == 'pengembalian'   ? 'active' : '' ?>">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="<?= $this->uri->segment(1) == 'pengembalian'   ? 'far fa-dot-circle' : 'far fa-circle' ?> nav-icon"></i>
                                 <p>Pengembalian</p>
                             </a>
                         </li>

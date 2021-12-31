@@ -61,7 +61,7 @@
                                                     if ($tgl_kembali >= $tgl_sekarang or $selisih == 0) {
                                                         echo "<span class='badge badge-info'>Belum di Kembalikan</span>";
                                                     } else {
-                                                        echo "Telat <b style = 'color:red;'>" . $selisih . "</b> Hari <br> <span class='badge badge-danger'> Denda Perhari = Rp. 1.000 </span>" . "<br> Atau sejumlah <br> " . rp($selisih * 1000) . "";
+                                                        echo "Telat <b style = 'color:red;'>" . $selisih . "</b> Hari <br> <span class='badge badge-danger'> Denda Perhari = Rp. 1.000 </span>" . "<br> Atau sejumlah <br> " . rp($selisih * 1000);
                                                     }
                                                     ?>
                                               </td>

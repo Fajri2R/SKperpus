@@ -40,18 +40,18 @@
                                             $selisih = $tgl_sekarang->diff($tgl_kembali)->format("%a");
                                         ?>
                                           <tr>
-                                              <td style="width:5%;"><?= $no++ ?></td>
-                                              <td style="width:10%;"><?= $row->id_peminjaman; ?></td>
+                                              <td><?= $no++ ?></td>
+                                              <td><?= $row->id_peminjaman; ?></td>
                                               <td><?= $row->name; ?></td>
                                               <td><?= $row->judul_buku; ?></td>
-                                              <td style="width: 15%;"><?= shortdate_indo($row->tgl_pinjam) ?></td>
-                                              <td style="width: 15%;"><?= shortdate_indo($row->tgl_kembali) ?></td>
-                                              <td style="width: 10%;">
+                                              <td><?= mediumdate_indo($row->tgl_pinjam) ?></td>
+                                              <td><?= mediumdate_indo($row->tgl_kembali) ?></td>
+                                              <td>
                                                   <?php
                                                     if ($tgl_kembali >= $tgl_sekarang or $selisih == 0) {
                                                         echo "<span class='badge badge-warning'>Belum di Kembalikan</span>";
                                                     } else {
-                                                        echo "Telat <b style = 'color:red;'>" . $selisih . "</b> Hari <br> <span class='label label-danger'> Denda Perhari = 1.000";
+                                                        echo "Telat <b style = 'color:red;'>" . $selisih . "</b> Hari <br> <span class='badge badge-danger'> Denda Perhari = Rp. 1.000 </span>" . "<br> Atau sejumlah <br> " . rp($selisih * 1000);
                                                     }
                                                     ?>
                                               </td>

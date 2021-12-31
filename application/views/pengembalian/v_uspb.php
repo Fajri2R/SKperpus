@@ -36,13 +36,13 @@
                                         $no = 1;
                                         foreach ($datapb as $row) { ?>
                                           <tr>
-                                              <td style="width:5%;"><?= $no++ ?></td>
+                                              <td><?= $no++ ?></td>
                                               <td><?= $row->name; ?></td>
                                               <td><?= $row->judul_buku; ?></td>
-                                              <td style="width: 10%;"><?= shortdate_indo($row->tgl_pinjam) ?></td>
-                                              <td style="width: 10%;"><?= shortdate_indo($row->tgl_kembali) ?></td>
-                                              <td style="width: 10%;"><?= shortdate_indo($row->tgl_kembalikan) ?></td>
-                                              <td style="width: 10%;">
+                                              <td><?= mediumdate_indo($row->tgl_pinjam) ?></td>
+                                              <td><?= mediumdate_indo($row->tgl_kembali) ?></td>
+                                              <td><?= mediumdate_indo($row->tgl_kembalikan) ?></td>
+                                              <td>
                                                   <?php
                                                     $tgl_kembali = new DateTime($row->tgl_kembali);
                                                     $tgl_kembalikan = new DateTime($row->tgl_kembalikan);
