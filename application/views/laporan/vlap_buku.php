@@ -17,9 +17,12 @@
               <div class="row">
                   <div class="col-12">
                       <div class="card">
-                          <div class="card-header row">
+                          <div class="card-header row justify-content-end">
                               <div class="col-sm-2">
-                                  <a href="" class="btn btn-success btn-flat"><i class="fas fa-plus"></i> &nbsp;&nbsp;Tambah Peminjaman</a>
+                                  <a href="<?= base_url('laporan/databuku') ?>" class="btn btn-warning btn-flat btn-block"><i class="fas fa-sync-alt"></i> &nbsp;&nbsp;Refresh</a>
+                              </div>
+                              <div class="col-sm-2">
+                                  <a href="<?= base_url('laporan/pdf_dabk') ?>" class="btn btn-danger btn-flat btn-block"><i class="far fa-file-pdf"></i> &nbsp;&nbsp;Cetak Laporan</a>
                               </div>
                           </div>
                           <!-- /.card-header -->
@@ -27,31 +30,46 @@
                               <table id="example2" class="table table-bordered table-striped">
                                   <thead>
                                       <tr>
-                                          <th>Rendering engine</th>
-                                          <th>Browser</th>
-                                          <th>Platform(s)</th>
-                                          <th>Engine version</th>
-                                          <th>CSS grade</th>
+                                          <th>No.</th>
+                                          <th>ID Buku</th>
+                                          <th>Tanggal Terima</th>
+                                          <th>Judul Buku</th>
+                                          <th>Pengarang</th>
+                                          <th>Penerbit</th>
+                                          <th>Tahun Terbit</th>
+                                          <th>Sumber</th>
+                                          <th>Jumlah</th>
                                       </tr>
                                   </thead>
                                   <tbody>
-                                      <tr>
-                                          <td>Trident</td>
-                                          <td>Internet
-                                              Explorer 4.0
-                                          </td>
-                                          <td>Win 95+</td>
-                                          <td> 4</td>
-                                          <td>X</td>
-                                      </tr>
+                                      <?php
+                                        $no = 1;
+                                        foreach ($databuku as $row) { ?>
+                                          <tr>
+                                              <td><?= $no++ ?></td>
+                                              <td><?= $row->id_buku ?></td>
+                                              <td><?= shortdate_indo($row->tgl_terima) ?></td>
+                                              <td><?= $row->judul_buku ?></td>
+                                              <td><?= $row->nama_pengarang ?></td>
+                                              <td><?= $row->nama_penerbit ?></td>
+                                              <td><?= $row->tahun_terbit ?></td>
+                                              <td><?= $row->sumber ?></td>
+                                              <td><?= $row->jumlah ?></td>
+                                          </tr>
+                                      <?php }
+                                        ?>
                                   </tbody>
                                   <tfoot>
                                       <tr>
-                                          <th>Rendering engine</th>
-                                          <th>Browser</th>
-                                          <th>Platform(s)</th>
-                                          <th>Engine version</th>
-                                          <th>CSS grade</th>
+                                          <th>No.</th>
+                                          <th>ID Buku</th>
+                                          <th>Tanggal Terima</th>
+                                          <th>Judul Buku</th>
+                                          <th>Pengarang</th>
+                                          <th>Penerbit</th>
+                                          <th>Tahun Terbit</th>
+                                          <th>Sumber</th>
+                                          <th>Jumlah</th>
                                       </tr>
                                   </tfoot>
                               </table>

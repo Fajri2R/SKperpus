@@ -21,9 +21,9 @@
                               <div class="col-sm-2">
                                   <a href="<?= base_url('laporan/dataanggota') ?>" class="btn btn-warning btn-flat btn-block"><i class="fas fa-sync-alt"></i> &nbsp;&nbsp;Refresh</a>
                               </div>
-                              <div class="col-sm-2">
+                              <!-- <div class="col-sm-2">
                                   <a href="<?= base_url('laporan/test') ?>" class="btn btn-warning btn-flat btn-block"><i class="fas fa-sync-alt"></i> &nbsp;&nbsp;TEST</a>
-                              </div>
+                              </div> -->
                               <div class="col-sm-2">
                                   <a href="<?= base_url('laporan/pdf_dagg') ?>" class="btn btn-danger btn-flat btn-block"><i class="far fa-file-pdf"></i> &nbsp;&nbsp;Cetak Laporan</a>
                               </div>

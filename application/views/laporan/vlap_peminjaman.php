@@ -17,9 +17,12 @@
               <div class="row">
                   <div class="col-12">
                       <div class="card">
-                          <div class="card-header row">
+                          <div class="card-header row justify-content-end">
                               <div class="col-sm-2">
-                                  <a href="" class="btn btn-success btn-flat"><i class="fas fa-plus"></i> &nbsp;&nbsp;Tambah Peminjaman</a>
+                                  <a href="<?= base_url('laporan/datapeminjaman') ?>" class="btn btn-warning btn-flat btn-block"><i class="fas fa-sync-alt"></i> &nbsp;&nbsp;Refresh</a>
+                              </div>
+                              <div class="col-sm-2">
+                                  <a href="<?= base_url('laporan/pdf_dapm') ?>" class="btn btn-danger btn-flat btn-block"><i class="far fa-file-pdf"></i> &nbsp;&nbsp;Cetak Laporan</a>
                               </div>
                           </div>
                           <!-- /.card-header -->
@@ -27,31 +30,55 @@
                               <table id="example2" class="table table-bordered table-striped">
                                   <thead>
                                       <tr>
-                                          <th>Rendering engine</th>
-                                          <th>Browser</th>
-                                          <th>Platform(s)</th>
-                                          <th>Engine version</th>
-                                          <th>CSS grade</th>
+                                          <th>No.</th>
+                                          <th>ID Peminjaman</th>
+                                          <th>ID Anggota</th>
+                                          <th>Nama Peminjam</th>
+                                          <th>Buku</th>
+                                          <th>Tanggal Pinjam</th>
+                                          <th>Tanggal Kembali</th>
+                                          <th>Status</th>
                                       </tr>
                                   </thead>
                                   <tbody>
-                                      <tr>
-                                          <td>Trident</td>
-                                          <td>Internet
-                                              Explorer 4.0
-                                          </td>
-                                          <td>Win 95+</td>
-                                          <td> 4</td>
-                                          <td>X</td>
-                                      </tr>
+                                      <?php
+                                        $no = 1;
+                                        foreach ($datapeminjaman as $row) {
+                                            $tgl_kembali = new DateTime($row->tgl_kembali);
+                                            $tgl_sekarang = new DateTime();
+                                            $selisih = $tgl_sekarang->diff($tgl_kembali)->format("%a");
+                                        ?>
+                                          <tr>
+                                              <td><?= $no++ ?></td>
+                                              <td><?= $row->id_peminjaman; ?></td>
+                                              <td><?= $row->id_anggota; ?></td>
+                                              <td><?= $row->name; ?></td>
+                                              <td><?= $row->judul_buku; ?></td>
+                                              <td><?= shortdate_indo($row->tgl_pinjam) ?></td>
+                                              <td><?= shortdate_indo($row->tgl_kembali) ?></td>
+                                              <td>
+                                                  <?php
+                                                    if ($tgl_kembali >= $tgl_sekarang or $selisih == 0) {
+                                                        echo "<span class='badge badge-info'>Belum di Kembalikan</span>";
+                                                    } else {
+                                                        echo "Telat <b style = 'color:red;'>" . $selisih . "</b> Hari <br> <span class='badge badge-danger'> Denda Perhari = Rp. 1.000 </span>" . "<br> Atau sejumlah <br> " . rp($selisih * 1000) . "";
+                                                    }
+                                                    ?>
+                                              </td>
+                                          </tr>
+                                      <?php }
+                                        ?>
                                   </tbody>
                                   <tfoot>
                                       <tr>
-                                          <th>Rendering engine</th>
-                                          <th>Browser</th>
-                                          <th>Platform(s)</th>
-                                          <th>Engine version</th>
-                                          <th>CSS grade</th>
+                                          <th>No.</th>
+                                          <th>ID Peminjaman</th>
+                                          <th>ID Anggota</th>
+                                          <th>Nama Peminjam</th>
+                                          <th>Buku</th>
+                                          <th>Tanggal Pinjam</th>
+                                          <th>Tanggal Kembali</th>
+                                          <th>Status</th>
                                       </tr>
                                   </tfoot>
                               </table>
