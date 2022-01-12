@@ -48,7 +48,7 @@ class Peminjaman extends CI_Controller
         if ($this->session->userdata('role_id') == '1') {
             $isi['title'] = 'Data Peminjaman';
             $isi['title2'] = '<b>E</b>-Perpus';
-            $isi['content'] = 'Daftar Data Peminjaman';
+            $isi['content'] = 'Tambah Data Peminjaman';
             $isi['id_pm'] = $this->m_id->id_peminjaman();
             $isi['pm'] = $this->m_peminjaman->anggota();
             $isi['buku'] = $this->db->get('buku')->result();

@@ -21,7 +21,7 @@
                 <div class="input-group mb-3">
                     <input type="password" style="border-right: 0;" class="form-control <?= form_error('password') ? 'is-invalid' : null ?>" placeholder="Password" id="password" name="password">
                     <div class="input-group-append">
-                        <div class="input-group-text" style="background-color: transparent;">
+                        <div class="input-group-text" style="background-color: white;">
                             <span class="fas fa-eye fa-fw" id="click-eyepw"></span>
                         </div>
                     </div>
