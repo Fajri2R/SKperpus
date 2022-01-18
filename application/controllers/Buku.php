@@ -201,7 +201,6 @@ class Buku extends CI_Controller
                 'tahun_terbit'     => $this->input->post('tahun_terbit'),
                 'kelas'     => $this->input->post('kelas'),
                 'prog_keahlian'     => $this->input->post('prog_keahlian'),
-                'sumber'     => ucwords($this->input->post('sumber')),
                 'jumlah'         => $this->input->post('jumlah'),
             ];
 

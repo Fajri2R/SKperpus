@@ -30,6 +30,13 @@
                                        </div>
                                    </div>
                                    <div class="form-group row">
+                                       <label for="inputIDuser" class="col-sm-3 col-form-label">Nomor Induk</label>
+                                       <div class="col-sm-9">
+                                           <input type="text" class="form-control <?= form_error('nomor_induk') ? 'is-warning' : null ?>" id="inputIDuser" placeholder="Nomor Induk" value="<?= $data['nomor_induk'] ?>" name="nomor_induk" readonly>
+                                           <?= form_error('nomor_induk', '<span class="error warning-feedback">', '</span>')  ?>
+                                       </div>
+                                   </div>
+                                   <div class="form-group row">
                                        <label for="inputNamauser" class="col-sm-3 col-form-label">Tanggal Terima</label>
                                        <div class="col-sm-9">
                                            <input type="date" class="form-control <?= form_error('tgl_terima') ? 'is-invalid' : null ?>" id="moddtpck" name="tgl_terima" value="<?= $data['tgl_terima'] ?>">
@@ -108,13 +115,6 @@
                                                <option value="TITL" <?= $data['prog_keahlian'] == "TITL" ? "selected" : null ?>> TITL </option>
                                            </select>
                                            <?= form_error('prog_keahlian', '<span class="error invalid-feedback">', '</span>')  ?>
-                                       </div>
-                                   </div>
-                                   <div class="form-group row">
-                                       <label for="inputNamauser" class="col-sm-3 col-form-label">Sumber Buku</label>
-                                       <div class="col-sm-9">
-                                           <input type="text" class="form-control <?= form_error('sumber') ? 'is-invalid' : null ?>" placeholder="Sumber Buku" id="sumber" name="sumber" value="<?= $data['sumber'] ?>">
-                                           <?= form_error('sumber', '<span class="error invalid-feedback">', '</span>')  ?>
                                        </div>
                                    </div>
                                    <div class="form-group row">
