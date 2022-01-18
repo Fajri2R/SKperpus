@@ -26,18 +26,17 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <?= $this->session->flashdata('pesan'); ?>
-                                <table id="example2" class="table table-bordered table-striped">
+                                <table id="example2" class="table table-bordered table-striped nowrap">
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>ID Buku</th>
+                                            <th>Nomor Induk</th>
                                             <th>Judul Buku</th>
                                             <th>Pengarang</th>
                                             <th>Penerbit</th>
                                             <th>Tahun Terbit</th>
                                             <th>Kelas</th>
                                             <th>Program Keahlian</th>
-                                            <th>Sumber</th>
                                             <th>Tanggal Terima</th>
                                             <th>Jumlah</th>
                                             <th>Aksi</th>
@@ -46,22 +45,22 @@
                                     <tbody>
                                         <?php
                                         $no = 1;
+                                        $noi = 1;
                                         foreach ($databuku as $row) { ?>
                                             <tr>
                                                 <td style="width: 3%;"><?= $no++ ?></td>
-                                                <td style="width: 7%;"><?= $row->id_buku ?></td>
+                                                <td style="width: 7%;"><?= $row->nomor_induk ?></td>
                                                 <td><?= $row->judul_buku ?></td>
                                                 <td><?= $row->nama_pengarang ?></td>
                                                 <td><?= $row->nama_penerbit ?></td>
                                                 <td style="width: 5%;"><?= $row->tahun_terbit ?></td>
                                                 <td style="width: 5%;"><?= $row->kelas ?></td>
                                                 <td style="width: 11%;"><?= $row->prog_keahlian ?></td>
-                                                <td style="width: 5%;"><?= $row->sumber ?></td>
-                                                <td style="width: 10%;"><?= mediumdate_indo($row->tgl_terima) ?></td>
+                                                <td style="width: 10%;"><?= slashdate_indo($row->tgl_terima) ?></td>
                                                 <td style="width: 5%;"><?= $row->jumlah ?></td>
                                                 <td style="width: 5%;">
-                                                    <a href="<?= base_url() ?>buku/edit/<?= $row->id_buku; ?>" class="btn btn-success btn-xs"><i class="fas fa-edit"></i>Edit</a>
-                                                    <a href="<?= base_url() ?>buku/hapus/<?= $row->id_buku; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus data buku ini?');"><i class="fas fa-trash"></i>Hapus</a>
+                                                    <a href="<?= base_url() ?>buku/edit/<?= $row->id_buku; ?>" class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="left" title="Edit"><i class="fas fa-edit"></i></a>
+                                                    <a href="<?= base_url() ?>buku/hapus/<?= $row->id_buku; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus data buku ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                         <?php }
@@ -70,14 +69,13 @@
                                     <tfoot>
                                         <tr>
                                             <th>No.</th>
-                                            <th>ID Buku</th>
+                                            <th>Nomor Induk</th>
                                             <th>Judul Buku</th>
                                             <th>Pengarang</th>
                                             <th>Penerbit</th>
                                             <th>Tahun Terbit</th>
                                             <th>Kelas</th>
                                             <th>Program Keahlian</th>
-                                            <th>Sumber</th>
                                             <th>Tanggal Terima</th>
                                             <th>Jumlah</th>
                                             <th>Aksi</th>

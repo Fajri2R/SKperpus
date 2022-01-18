@@ -25,16 +25,14 @@
                           <!-- /.card-header -->
                           <div class="card-body">
                               <?= $this->session->flashdata('pesan'); ?>
-                              <table id="example2" class="table table-bordered table-striped">
+                              <table id="example2" class="table table-bordered table-striped nowrap">
                                   <thead>
                                       <tr>
                                           <th>No.</th>
                                           <th>ID Peminjaman</th>
-                                          <th>ID Anggota</th>
-                                          <th>Nama Peminjam</th>
+                                          <th>ID & Nama Peminjam</th>
                                           <th>Buku</th>
-                                          <th>Tanggal Pinjam</th>
-                                          <th>Tanggal Kembali</th>
+                                          <th>Tanggal Pinjam / Kembali</th>
                                           <th>Status</th>
                                           <th>Nomor Whatsapp</th>
                                           <th>Aksi</th>
@@ -51,17 +49,15 @@
                                           <tr>
                                               <td style="width:2%;"><?= $no++ ?></td>
                                               <td style="width:5%;"><?= $row->id_peminjaman; ?></td>
-                                              <td style="width:5%;"><?= $row->id_anggota; ?></td>
-                                              <td><?= $row->name; ?></td>
-                                              <td><?= $row->judul_buku; ?></td>
-                                              <td style="width: 8%;"><?= shortdate_indo($row->tgl_pinjam) ?></td>
-                                              <td style="width: 8%;"><?= shortdate_indo($row->tgl_kembali) ?></td>
+                                              <td style="width:5%;">[<?= $row->id_anggota; ?>] <?= $row->name; ?></td>
+                                              <td>[<?= $row->nomor_induk; ?>] <?= $row->judul_buku; ?></td>
+                                              <td style="width: 8%;"><?= shortdate_indo($row->tgl_pinjam) ?> / <?= shortdate_indo($row->tgl_kembali) ?></td>
                                               <td style="width: 4%;">
                                                   <?php
                                                     if ($tgl_kembali >= $tgl_sekarang or $selisih == 0) {
                                                         echo "<span class='badge badge-info'>Belum di Kembalikan</span>";
                                                     } else {
-                                                        echo "Telat <b style = 'color:red;'>" . $selisih . "</b> Hari <br> <span class='badge badge-danger'> Denda Perhari = Rp. 1.000 </span>" . "<br> Atau sejumlah <br> " . rp($selisih * 1000);
+                                                        echo "Telat <b style = 'color:red;'>" . $selisih . "</b> Hari <br> <span class='badge badge-danger'> Denda Perhari = Rp. 500 </span>" . "<br> Atau sejumlah <br> " . rp($selisih * 500);
                                                     }
                                                     ?>
                                               </td>
@@ -90,10 +86,10 @@
                                                 // tapi kalau desktop pakai web.whatsapp.com
                                                 else $linkWA = 'https://web.whatsapp.com/send?phone=' . $nomor . $pesanreal . $penutup;
                                                 ?>
-                                              <td style="width:8%">
-                                                  <a href="<?= $linkWA ?>" target="_blank" class="btn btn-success btn-xs" onclick="return confirm('Kirim notifikasi pengembalian buku ke anggota ini?');"><i class="fab fa-whatsapp"></i> Notifikasi</a>
-                                                  <a href="<?= base_url() ?>peminjaman/kembalikan/<?= $row->id_peminjaman; ?>" class="btn btn-primary btn-xs" onclick="return confirm('Yakin anggota ini sudah mengembalikan buku?');"><i class="fa fa-undo"></i> Kembalikan</a>
-                                                  <a href="<?= base_url() ?>peminjaman/hapus/<?= $row->id_peminjaman; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin mau menghapus data peminjaman ini?');"><i class="fa fa-trash"></i> Hapus</a>
+                                              <td style="width:5%">
+                                                  <a href="<?= $linkWA ?>" target="_blank" class="btn btn-success btn-xs" onclick="return confirm('Kirim notifikasi pengembalian buku ke anggota ini?');" data-toggle="tooltip" data-placement="left" title="Notifikasi"><i class="fab fa-whatsapp"></i></a>
+                                                  <a href="<?= base_url() ?>peminjaman/kembalikan/<?= $row->id_peminjaman; ?>" class="btn btn-primary btn-xs" onclick="return confirm('Yakin anggota ini sudah mengembalikan buku?');" data-toggle="tooltip" data-placement="left" title="Kembalikan"><i class="fa fa-undo"></i></a>
+                                                  <a href="<?= base_url() ?>peminjaman/hapus/<?= $row->id_peminjaman; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin mau menghapus data peminjaman ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fa fa-trash"></i></a>
                                               </td>
                                           </tr>
                                       <?php }
@@ -103,11 +99,9 @@
                                       <tr>
                                           <th>No.</th>
                                           <th>ID Peminjaman</th>
-                                          <th>ID Anggota</th>
-                                          <th>Nama Peminjam</th>
+                                          <th>ID & Nama Peminjam</th>
                                           <th>Buku</th>
-                                          <th>Tanggal Pinjam</th>
-                                          <th>Tanggal Kembali</th>
+                                          <th>Tanggal Pinjam / Kembali</th>
                                           <th>Status</th>
                                           <th>Nomor Whatsapp</th>
                                           <th>Aksi</th>

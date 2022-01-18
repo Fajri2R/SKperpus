@@ -113,7 +113,11 @@
                                    <div class="form-group row">
                                        <label for="inputNamauser" class="col-sm-3 col-form-label">Sumber Buku</label>
                                        <div class="col-sm-9">
-                                           <input type="text" class="form-control <?= form_error('sumber') ? 'is-invalid' : null ?>" placeholder="Sumber Buku" id="sumber" name="sumber" value="<?= set_value('sumber') ?>">
+                                           <select class="form-control select2 <?= form_error('sumber') ? 'is-invalid' : null ?>" name="sumber" style="width: 100%;">
+                                               <option value="">Pilih Sumber</option>
+                                               <option value="B" <?= set_value('sumber') == "B" ? "selected" : null ?>> BOS </option>
+                                               <option value="NB" <?= set_value('sumber') == "NB" ? "selected" : null ?>> Non BOS </option>
+                                           </select>
                                            <?= form_error('sumber', '<span class="error invalid-feedback">', '</span>')  ?>
                                        </div>
                                    </div>

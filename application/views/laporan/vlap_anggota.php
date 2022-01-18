@@ -60,7 +60,7 @@
                                       <tr>
                                           <th>No.</th>
                                           <th>ID Anggota</th>
-                                          <th>Nama</th>
+                                          <th>Nama Anggota</th>
                                           <th>Jenis Kelamin</th>
                                           <th>Alamat</th>
                                           <th>Nomor Whatsapp</th>

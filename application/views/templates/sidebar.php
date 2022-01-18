@@ -23,7 +23,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('admin/datauser') ?>" class="nav-link <?= $this->uri->segment(2) == 'datauser' || $this->uri->segment(2) == 'adduser' || $this->uri->segment(1) == 'admin' && $this->uri->segment(2) == 'edit' ? 'active' : '' ?>">
+                    <a href="<?= base_url('admin/datauser') ?>" class="nav-link <?= $this->uri->segment(2) == 'datauser' || $this->uri->segment(2) == 'adduser' || $this->uri->segment(1) == 'admin' && ($this->uri->segment(2) == 'edit' || $this->uri->segment(2) == 'simpan' || $this->uri->segment(2) == 'update') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Data User</p>
                     </a>

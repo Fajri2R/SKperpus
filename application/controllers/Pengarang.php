@@ -114,13 +114,13 @@ class Pengarang extends CI_Controller
                 foreach ($idg as $row) {
                     $id = $row->id_pengarang;
                 };
-                $isi['title']       = 'Edit Pengarang';
-                $isi['title2']      = '<b>E</b>-Perpus';
-                $isi['content']     = 'Edit Data Pengarang';
-                $isi['data']        = $this->m_pengarang->edit($id);
+                $isi['title'] = 'Edit Pengarang';
+                $isi['title2'] = '<b>E</b>-Perpus';
+                $isi['content'] = 'Edit Data Pengarang';
+                $isi['data'] = $this->m_pengarang->edit($id);
                 $this->load->view('templates/header', $isi);
                 $this->load->view('templates/sidebar', $isi);
-                $this->load->view('user/v_editpg', $isi);
+                $this->load->view('pengarang/v_editpg', $isi);
                 $this->load->view('templates/footer');
             } else {
                 redirect('user');

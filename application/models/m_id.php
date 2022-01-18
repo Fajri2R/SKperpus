@@ -109,4 +109,24 @@ class M_id extends CI_Model
         $kodejadi = "PB" . $kodemax;
         return $kodejadi;
     }
+
+
+    public function no_induk()
+    {
+        $this->db->select('LEFT(buku.nomor_induk,3) as kode', FALSE);
+        $this->db->order_by('nomor_induk', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('buku');
+        if ($query->num_rows() <> 0) {
+            $data = $query->row();
+            $kode = intval($data->kode) + 1;
+        } else {
+            $kode = 1;
+        }
+
+        $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT);
+        // $if = $this->input->post('sumber') == "B" ? "/B" : "/NB";
+        // $kodejadi = $kodemax . $if . "/MUHI/" . date('Y');
+        return $kodemax;
+    }
 }

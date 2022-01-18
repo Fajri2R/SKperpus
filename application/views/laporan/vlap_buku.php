@@ -31,13 +31,12 @@
                                   <thead>
                                       <tr>
                                           <th>No.</th>
-                                          <th>ID Buku</th>
+                                          <th>Nomor Induk</th>
                                           <th>Tanggal Terima</th>
                                           <th>Judul Buku</th>
                                           <th>Pengarang</th>
                                           <th>Penerbit</th>
                                           <th>Tahun Terbit</th>
-                                          <th>Sumber</th>
                                           <th>Jumlah</th>
                                       </tr>
                                   </thead>
@@ -46,14 +45,13 @@
                                         $no = 1;
                                         foreach ($databuku as $row) { ?>
                                           <tr>
-                                              <td><?= $no++ ?></td>
-                                              <td><?= $row->id_buku ?></td>
-                                              <td><?= shortdate_indo($row->tgl_terima) ?></td>
+                                              <td style="width: 5%;"><?= $no++ ?></td>
+                                              <td><?= $row->nomor_induk ?></td>
+                                              <td><?= slashdate_indo($row->tgl_terima) ?></td>
                                               <td><?= $row->judul_buku ?></td>
                                               <td><?= $row->nama_pengarang ?></td>
                                               <td><?= $row->nama_penerbit ?></td>
                                               <td><?= $row->tahun_terbit ?></td>
-                                              <td><?= $row->sumber ?></td>
                                               <td><?= $row->jumlah ?></td>
                                           </tr>
                                       <?php }
@@ -62,13 +60,12 @@
                                   <tfoot>
                                       <tr>
                                           <th>No.</th>
-                                          <th>ID Buku</th>
+                                          <th>Nomor Induk</th>
                                           <th>Tanggal Terima</th>
                                           <th>Judul Buku</th>
                                           <th>Pengarang</th>
                                           <th>Penerbit</th>
                                           <th>Tahun Terbit</th>
-                                          <th>Sumber</th>
                                           <th>Jumlah</th>
                                       </tr>
                                   </tfoot>

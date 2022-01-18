@@ -42,9 +42,9 @@
                                               <td style="width:5%;"><?= $no++ ?></td>
                                               <td style="width:15%;"><?= $row->id_pengarang ?></td>
                                               <td><?= $row->nama_pengarang ?></td>
-                                              <td style="width: 10%;">
-                                                  <a href="<?= base_url() ?>pengarang/edit/<?= $row->id_pengarang; ?>" class="btn btn-success btn-xs"><i class="fas fa-edit"></i> Edit</a>
-                                                  <a href="<?= base_url() ?>pengarang/hapus/<?= $row->id_pengarang; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus data pengarang ini?');"><i class="fas fa-trash"></i> Hapus</a>
+                                              <td style="width: 5%;">
+                                                  <a href="<?= base_url() ?>pengarang/edit/<?= $row->id_pengarang; ?>" class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="left" title="Edit"><i class="fas fa-edit"></i></a>
+                                                  <a href="<?= base_url() ?>pengarang/hapus/<?= $row->id_pengarang; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus data pengarang ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fas fa-trash"></i></a>
                                               </td>
                                           </tr>
                                       <?php }

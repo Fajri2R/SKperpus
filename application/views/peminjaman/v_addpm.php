@@ -35,7 +35,7 @@
                                                <option value="">Pilih Peminjam</option>
                                                <?php
                                                 foreach ($pm as $row) { ?>
-                                                   <option value="<?= $row->id_anggota; ?>" <?= set_value('id_anggota') == $row->id_anggota ? "selected" : null ?>><?= $row->name; ?></option>
+                                                   <option value="<?= $row->id_anggota; ?>" <?= set_value('id_anggota') == $row->id_anggota ? "selected" : null ?>>[<?= $row->id_anggota ?>] | <?= $row->name; ?></option>
                                                <?php }
                                                 ?>
                                            </select>
@@ -49,7 +49,7 @@
                                                <option value="">Pilih Buku</option>
                                                <?php
                                                 foreach ($buku as $row) { ?>
-                                                   <option value="<?= $row->id_buku; ?>" <?= set_value('id_buku') == $row->id_buku ? "selected" : null ?>><?= $row->judul_buku; ?></option>
+                                                   <option value="<?= $row->id_buku; ?>" <?= set_value('id_buku') == $row->id_buku ? "selected" : null ?>>[<?= $row->nomor_induk ?>] | <?= $row->judul_buku; ?></option>
                                                <?php }
                                                 ?>
                                            </select>

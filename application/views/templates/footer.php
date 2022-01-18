@@ -38,6 +38,12 @@
 <script src="<?= base_url('assets/adminlte/')  ?>plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Private JS Content -->
 <script src="<?= base_url('assets/js/')  ?>content.js"></script>
+<!-- Tooltip -->
+<script>
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 </body>
 
 </html>

@@ -87,12 +87,11 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>ID Pengem<br>balian</th>
-                <th>ID Anggota</th>
-                <th>Nama Peminjam</th>
+                <th>ID Pengembalian</th>
+                <th>ID & Nama Peminjam</th>
                 <th>Buku</th>
-                <th>Tanggal Pinjam<br>- Kembali</th>
-                <th>Tanggal Di<br>kembalikan</th>
+                <th>Tanggal Pinjam / Kembali</th>
+                <th>Tanggal Dikembalikan</th>
                 <th>Denda</th>
             </tr>
         </thead>
@@ -103,11 +102,10 @@
                 <tr>
                     <td><?= $no++ ?></td>
                     <td><?= $row->id_pengembalian; ?></td>
-                    <td><?= $row->id_anggota; ?></td>
-                    <td><?= $row->name; ?></td>
-                    <td><?= $row->judul_buku; ?></td>
-                    <td><?= slashdate_indo($row->tgl_pinjam) ?> - <br><?= slashdate_indo($row->tgl_kembali) ?></td>
-                    <td><?= slashdate_indo($row->tgl_kembalikan) ?></td>
+                    <td>[<?= $row->id_anggota; ?>] <?= $row->name; ?></td>
+                    <td>[<?= $row->nomor_induk; ?>] <?= $row->judul_buku; ?></td>
+                    <td><?= shortdate_indo($row->tgl_pinjam) ?> / <?= shortdate_indo($row->tgl_kembali) ?></td>
+                    <td><?= shortdate_indo($row->tgl_kembalikan) ?></td>
                     <td>
                         <?php
                         $tgl_kembali = new DateTime($row->tgl_kembali);

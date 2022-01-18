@@ -97,6 +97,9 @@ class Buku extends CI_Controller
                 redirect('user');
             }
         } else {
+            $urut = $this->m_id->no_induk();
+            $if = $this->input->post('sumber') == "B" ? "/B" : "/NB";
+            $noindk = $urut . $if . "/MUHI/" . date('Y');;
             $isi = [
                 'id_buku'         => $this->input->post('id_buku'),
                 'tgl_terima'     => $this->input->post('tgl_terima'),
@@ -108,6 +111,7 @@ class Buku extends CI_Controller
                 'prog_keahlian'     => $this->input->post('prog_keahlian'),
                 'sumber'     => ucwords($this->input->post('sumber')),
                 'jumlah'         => $this->input->post('jumlah'),
+                'nomor_induk'         => $noindk,
             ];
             $this->db->insert('buku', $isi);
 

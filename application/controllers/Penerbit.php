@@ -114,13 +114,13 @@ class Penerbit extends CI_Controller
                 foreach ($idg as $row) {
                     $id = $row->id_penerbit;
                 };
-                $isi['title']       = 'Edit Pengarang';
-                $isi['title2']      = '<b>E</b>-Perpus';
-                $isi['content']     = 'Edit Data Pengarang';
-                $isi['data']        = $this->m_penerbit->edit($id);
+                $isi['title'] = 'Edit Penerbit';
+                $isi['title2'] = '<b>E</b>-Perpus';
+                $isi['content'] = 'Edit Data Penerbit';
+                $isi['data'] = $this->m_penerbit->edit($id);
                 $this->load->view('templates/header', $isi);
                 $this->load->view('templates/sidebar', $isi);
-                $this->load->view('user/v_editpg', $isi);
+                $this->load->view('penerbit/v_editpn', $isi);
                 $this->load->view('templates/footer');
             } else {
                 redirect('user');

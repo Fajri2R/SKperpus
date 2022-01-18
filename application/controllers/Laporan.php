@@ -95,14 +95,31 @@ class Laporan extends CI_Controller
     {
         $isi['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         if ($this->session->userdata('role_id') == '1') {
-            $isi['title'] = 'Laporan Peminjaman Buku';
-            $isi['title2'] = '<b>E</b>-Perpus';
-            $isi['content'] = 'Laporan Data Peminjaman Buku';
-            $isi['datapeminjaman'] = $this->m_laporan->dataPM();
-            $this->load->view('templates/header', $isi);
-            $this->load->view('templates/sidebar', $isi);
-            $this->load->view('laporan/vlap_peminjaman', $isi);
-            $this->load->view('templates/footer');
+            $tgl_awal = $this->input->post('tgl_awal');
+            $tgl_akhir = $this->input->post('tgl_akhir');
+
+            $this->session->set_userdata('tanggal_awal', $tgl_awal);
+            $this->session->set_userdata('tanggal_akhir', $tgl_akhir);
+
+            if (empty($tgl_awal) || empty($tgl_akhir)) {
+                $isi['title'] = 'Laporan Peminjaman Buku';
+                $isi['title2'] = '<b>E</b>-Perpus';
+                $isi['content'] = 'Laporan Data Peminjaman Buku';
+                $isi['datapeminjaman'] = $this->m_laporan->dataPM();
+                $this->load->view('templates/header', $isi);
+                $this->load->view('templates/sidebar', $isi);
+                $this->load->view('laporan/vlap_peminjaman', $isi);
+                $this->load->view('templates/footer');
+            } else {
+                $isi['title'] = 'Laporan Peminjaman Buku';
+                $isi['title2'] = '<b>E</b>-Perpus';
+                $isi['content'] = 'Laporan Data Peminjaman Buku';
+                $isi['datapeminjaman'] = $this->m_laporan->filterDataPM($tgl_awal, $tgl_akhir);
+                $this->load->view('templates/header', $isi);
+                $this->load->view('templates/sidebar', $isi);
+                $this->load->view('laporan/vlap_peminjaman', $isi);
+                $this->load->view('templates/footer');
+            }
         } else {
             redirect('user');
         }
@@ -133,14 +150,31 @@ class Laporan extends CI_Controller
     {
         $isi['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         if ($this->session->userdata('role_id') == '1') {
-            $isi['title'] = 'Laporan Pengembalian Buku';
-            $isi['title2'] = '<b>E</b>-Perpus';
-            $isi['content'] = 'Laporan Data Pengembalian Buku';
-            $isi['datapengembalian'] = $this->m_laporan->dataPB();
-            $this->load->view('templates/header', $isi);
-            $this->load->view('templates/sidebar', $isi);
-            $this->load->view('laporan/vlap_pengembalian', $isi);
-            $this->load->view('templates/footer');
+            $tgl_awal = $this->input->post('tgl_awal');
+            $tgl_akhir = $this->input->post('tgl_akhir');
+
+            $this->session->set_userdata('tanggal_awal', $tgl_awal);
+            $this->session->set_userdata('tanggal_akhir', $tgl_akhir);
+
+            if (empty($tgl_awal) || empty($tgl_akhir)) {
+                $isi['title'] = 'Laporan Pengembalian Buku';
+                $isi['title2'] = '<b>E</b>-Perpus';
+                $isi['content'] = 'Laporan Data Pengembalian Buku';
+                $isi['datapengembalian'] = $this->m_laporan->dataPB();
+                $this->load->view('templates/header', $isi);
+                $this->load->view('templates/sidebar', $isi);
+                $this->load->view('laporan/vlap_pengembalian', $isi);
+                $this->load->view('templates/footer');
+            } else {
+                $isi['title'] = 'Laporan Pengembalian Buku';
+                $isi['title2'] = '<b>E</b>-Perpus';
+                $isi['content'] = 'Laporan Data Pengembalian Buku';
+                $isi['datapengembalian'] = $this->m_laporan->filterDataPB($tgl_awal, $tgl_akhir);
+                $this->load->view('templates/header', $isi);
+                $this->load->view('templates/sidebar', $isi);
+                $this->load->view('laporan/vlap_pengembalian', $isi);
+                $this->load->view('templates/footer');
+            }
         } else {
             redirect('user');
         }

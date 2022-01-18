@@ -87,12 +87,10 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>ID Pemin<br>jaman</th>
-                <th>ID Anggota</th>
-                <th>Nama Peminjam</th>
+                <th>ID Peminjaman</th>
+                <th>ID & Nama Peminjam</th>
                 <th>Buku</th>
-                <th>Tanggal Pinjam</th>
-                <th>Tanggal Kembali</th>
+                <th>Tanggal Pinjam / Kembali</th>
                 <th>Status</th>
             </tr>
         </thead>
@@ -107,17 +105,15 @@
                 <tr>
                     <td><?= $no++ ?></td>
                     <td><?= $row->id_peminjaman; ?></td>
-                    <td><?= $row->id_anggota; ?></td>
-                    <td><?= $row->name; ?></td>
-                    <td><?= $row->judul_buku; ?></td>
-                    <td><?= slashdate_indo($row->tgl_pinjam) ?></td>
-                    <td><?= slashdate_indo($row->tgl_kembali) ?></td>
+                    <td>[<?= $row->id_anggota; ?>] <?= $row->name; ?></td>
+                    <td>[<?= $row->nomor_induk; ?>] <?= $row->judul_buku; ?></td>
+                    <td><?= shortdate_indo($row->tgl_pinjam) ?> / <br> <?= shortdate_indo($row->tgl_kembali) ?></td>
                     <td>
                         <?php
                         if ($tgl_kembali >= $tgl_sekarang or $selisih == 0) {
                             echo "<span class='badge badge-info'>Belum di Kembalikan</span>";
                         } else {
-                            echo "Telat <br><b style = 'color:red;'>" . $selisih . "</b> hari";
+                            echo "Telat <br><b style = 'color:red;'>" . $selisih . "</b> hari, atau sejumlah <br>" . rp($selisih * 500);
                         }
                         ?>
                     </td>
@@ -130,7 +126,7 @@
         <table width="100%">
             <tr>
                 <p> <b> Keterangan: </b>
-                    <br>Denda perhari yaitu, Rp. 1000,-
+                    <br>Denda perhari yaitu, Rp. 500,-
                 </p>
             </tr>
         </table>

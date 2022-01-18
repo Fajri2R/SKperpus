@@ -17,7 +17,7 @@
         #table td,
         #table th {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 6px;
         }
 
         #table tr:nth-child(even) {
@@ -31,7 +31,7 @@
         #table th {
             padding-top: 10px;
             padding-bottom: 10px;
-            text-align: left;
+            text-align: center;
             background-color: #4CAF50;
             color: white;
         }
@@ -56,6 +56,17 @@
             margin-left: auto;
             margin-right: auto;
             width: 100%;
+        }
+
+        th>.nwrap,
+        td>.nwrap {
+            width: auto;
+            min-width: 0;
+            max-width: 200px;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
     </style>
 </head>
@@ -86,15 +97,30 @@
     <table id="table">
         <thead>
             <tr>
-                <th>No.</th>
-                <th>ID Buku</th>
-                <th>Tanggal Terima</th>
-                <th>Judul Buku</th>
-                <th>Pengarang</th>
-                <th>Penerbit</th>
-                <th>Tahun Terbit</th>
-                <th>Sumber</th>
-                <th>Jumlah</th>
+                <th>
+                    <div class="nwrap">No.</div>
+                </th>
+                <th>
+                    <div class="nwrap">Nomor Induk</div>
+                </th>
+                <th>
+                    <div class="">Tanggal Terima</div>
+                </th>
+                <th>
+                    <div class="nwrap">Judul Buku</div>
+                </th>
+                <th>
+                    <div class="nwrap">Pengarang</div>
+                </th>
+                <th>
+                    <div class="nwrap">Penerbit</div>
+                </th>
+                <th>
+                    <div class="">Tahun Terbit</div>
+                </th>
+                <th>
+                    <div class="nwrap">Jumlah</div>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -102,15 +128,14 @@
             $no = 1;
             foreach ($databuku as $row) { ?>
                 <tr>
-                    <td style="width: 3%;"><?= $no++ ?></td>
-                    <td style="width: 7%;"><?= $row->id_buku ?></td>
-                    <td style="width: 10%;"><?= slashdate_indo($row->tgl_terima) ?></td>
+                    <td style="text-align: center;"><?= $no++ ?></td>
+                    <td><?= $row->nomor_induk ?></td>
+                    <td><?= slashdate_indo($row->tgl_terima) ?></td>
                     <td><?= $row->judul_buku ?></td>
                     <td><?= $row->nama_pengarang ?></td>
                     <td><?= $row->nama_penerbit ?></td>
-                    <td style="width: 10%;"><?= $row->tahun_terbit ?></td>
-                    <td style="width: 5%;"><?= $row->sumber ?></td>
-                    <td style="width: 3%;"><?= $row->jumlah ?></td>
+                    <td><?= $row->tahun_terbit ?></td>
+                    <td><?= $row->jumlah ?></td>
                 </tr>
             <?php }
             ?>
