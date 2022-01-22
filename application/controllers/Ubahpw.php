@@ -29,14 +29,14 @@ class Ubahpw extends CI_Controller
         $this->form_validation->set_rules('pwold', 'Password Lama', 'required|trim', [
             'required'      => 'Kamu belum menginput %s',
         ]);
-        $this->form_validation->set_rules('pwnew', 'Password Baru', 'required|trim|min_length[8]|matches[pwnew2]', [
+        $this->form_validation->set_rules('pwnew', 'Password Baru', 'required|trim|min_length[6]|matches[pwnew2]', [
             'required' => 'Kamu belum menginput %s',
-            'min_length' => '%s terlalu pendek, minimal 8 karakter',
+            'min_length' => '%s terlalu pendek, minimal 6 karakter',
             'matches' => '%s tidak cocok'
         ]);
-        $this->form_validation->set_rules('pwnew2', 'Konfirmasi Password Baru', 'required|trim|min_length[8]|matches[pwnew]', [
+        $this->form_validation->set_rules('pwnew2', 'Konfirmasi Password Baru', 'required|trim|min_length[6]|matches[pwnew]', [
             'required' => 'Kamu belum menginput %s',
-            'min_length' => '%s terlalu pendek, minimal 8 karakter',
+            'min_length' => '%s terlalu pendek, minimal 6 karakter',
             'matches' => '%s tidak cocok'
         ]);
         if ($this->form_validation->run() == false) {

@@ -165,9 +165,6 @@ class Buku extends CI_Controller
         $this->form_validation->set_rules('prog_keahlian', 'Program Keahlian', 'required|trim', [
             'required' => 'Kamu belum menginput %s',
         ]);
-        $this->form_validation->set_rules('sumber', 'Sumber Buku', 'required|trim', [
-            'required' => 'Kamu belum menginput %s',
-        ]);
         $this->form_validation->set_rules('jumlah', 'Jumlah', 'required|trim', [
             'required' => 'Kamu belum menginput %s',
         ]);
@@ -177,15 +174,15 @@ class Buku extends CI_Controller
                 foreach ($idg as $row) {
                     $id = $row->id_buku;
                 };
-                $isi['title'] = 'Tambah Buku';
+                $isi['title'] = 'Edit Buku';
                 $isi['title2'] = '<b>E</b>-Perpus';
-                $isi['content'] = 'Tambah Data Buku';
-                $isi['id_buku']     = $this->m_id->id_buku();
-                $isi['pengarang']     = $this->db->get('pengarang')->result();
-                $isi['penerbit']     = $this->db->get('penerbit')->result();
+                $isi['content'] = 'Edit Data Buku';
+                $isi['pengarang']   = $this->db->get('pengarang')->result();
+                $isi['penerbit']   = $this->db->get('penerbit')->result();
+                $isi['data']     =  $this->m_buku->edit($id);
                 $this->load->view('templates/header', $isi);
                 $this->load->view('templates/sidebar', $isi);
-                $this->load->view('buku/v_addbk', $isi);
+                $this->load->view('buku/v_editbk', $isi);
                 $this->load->view('templates/footer');
             } else {
                 redirect('user');

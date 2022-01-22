@@ -166,14 +166,14 @@ class Admin extends CI_Controller
             'required' => 'Kamu belum menginput %s',
             'is_unique' => '%s sudah terdaftar'
         ]);
-        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[8]|matches[password2]', [
+        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
             'required' => 'Kamu belum menginput %s',
-            'min_length' => '%s terlalu pendek, minimal 8 karakter',
+            'min_length' => '%s terlalu pendek, minimal 6 karakter',
             'matches' => '%s tidak cocok dengan Konfirmasi Password'
         ]);
-        $this->form_validation->set_rules('password2', 'Konfirmasi Password', 'required|trim|min_length[8]|matches[password2]', [
+        $this->form_validation->set_rules('password2', 'Konfirmasi Password', 'required|trim|min_length[6]|matches[password1]', [
             'required' => 'Kamu belum menginput %s',
-            'min_length' => '%s terlalu pendek, minimal 8 karakter',
+            'min_length' => '%s terlalu pendek, minimal 6 karakter',
             'matches' => '%s tidak cocok'
 
         ]);

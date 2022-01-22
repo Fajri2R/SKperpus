@@ -45,7 +45,6 @@
                                     <tbody>
                                         <?php
                                         $no = 1;
-                                        $noi = 1;
                                         foreach ($databuku as $row) { ?>
                                             <tr>
                                                 <td style="width: 3%;"><?= $no++ ?></td>
