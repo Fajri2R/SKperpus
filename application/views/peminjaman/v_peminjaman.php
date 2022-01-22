@@ -80,11 +80,12 @@
                                                 $e1 = '%20%F0%9F%98%81%0A%0A';
                                                 $e2 = '%F0%9F%91%8C%0A';
                                                 $e3 = '%F0%9F%98%B1';
-                                                $pesanreal = '&text=' . 'Halo selamat ' . $salam . $e1 . 'Ini dari perpustakaan, ingin mengingatkan bahwa waktu pinjam buku berjudul %22' . $jdlbuku . '%22 telah habis. Mohon segera dikembalikan secepatnya, agar denda yang harus kamu bayar tidak semakin besar, terima kasih ' . $e2 . 'Psssstt, ingat loh denda perharinya jika telat yaitu Rp. 1000,-%20 ' . $e3;
+                                                $pesanreal = '&text=' . 'Halo selamat ' . $salam . $e1 . 'Ini dari perpustakaan, ingin mengingatkan bahwa waktu pinjam buku berjudul %22' . urlencode($jdlbuku) . '%22 telah habis. Mohon segera dikembalikan secepatnya, agar denda yang harus kamu bayar tidak semakin besar, terima kasih ' . $e2 . 'Psssstt, ingat loh denda perharinya jika telat yaitu Rp. 500,-%20 ' . $e3;
                                                 $penutup = '%0A%0A-%20Salam hangat dari Petugas Perpustakaan%20%F0%9F%98%89';
                                                 if ($this->agent->is_mobile()) $linkWA = 'https://api.whatsapp.com/send?phone=' . $nomor . $pesanreal . $penutup;
                                                 // tapi kalau desktop pakai web.whatsapp.com
                                                 else $linkWA = 'https://web.whatsapp.com/send?phone=' . $nomor . $pesanreal . $penutup;
+
                                                 ?>
                                               <td style="width:5%">
                                                   <a href="<?= $linkWA ?>" target="_blank" class="btn btn-success btn-xs" onclick="return confirm('Kirim notifikasi pengembalian buku ke anggota ini?');" data-toggle="tooltip" data-placement="left" title="Notifikasi"><i class="fab fa-whatsapp"></i></a>

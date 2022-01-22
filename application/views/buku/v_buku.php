@@ -26,20 +26,20 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <?= $this->session->flashdata('pesan'); ?>
-                                <table id="example2" class="table table-bordered table-striped nowrap">
+                                <table id="example2" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>No.</th>
-                                            <th>Nomor Induk</th>
-                                            <th>Judul Buku</th>
-                                            <th>Pengarang</th>
-                                            <th>Penerbit</th>
-                                            <th>Tahun Terbit</th>
-                                            <th>Kelas</th>
-                                            <th>Program Keahlian</th>
-                                            <th>Tanggal Terima</th>
-                                            <th>Jumlah</th>
-                                            <th>Aksi</th>
+                                            <th style="white-space: nowrap;">No.</th>
+                                            <th style="white-space: nowrap;">Nomor Induk</th>
+                                            <th style="white-space: nowrap;">Judul Buku</th>
+                                            <th style="white-space: nowrap;">Pengarang</th>
+                                            <th style="white-space: nowrap;">Penerbit</th>
+                                            <th style="white-space: nowrap;">Tahun Terbit</th>
+                                            <th style="white-space: nowrap;">Kelas</th>
+                                            <th style="white-space: nowrap;">Program Keahlian</th>
+                                            <th style="white-space: nowrap;">Tanggal Terima</th>
+                                            <th style="white-space: nowrap;">Jumlah</th>
+                                            <th style="white-space: nowrap;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -67,17 +67,17 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>No.</th>
-                                            <th>Nomor Induk</th>
-                                            <th>Judul Buku</th>
-                                            <th>Pengarang</th>
-                                            <th>Penerbit</th>
-                                            <th>Tahun Terbit</th>
-                                            <th>Kelas</th>
-                                            <th>Program Keahlian</th>
-                                            <th>Tanggal Terima</th>
-                                            <th>Jumlah</th>
-                                            <th>Aksi</th>
+                                            <th style="white-space: nowrap;">No.</th>
+                                            <th style="white-space: nowrap;">Nomor Induk</th>
+                                            <th style="white-space: nowrap;">Judul Buku</th>
+                                            <th style="white-space: nowrap;">Pengarang</th>
+                                            <th style="white-space: nowrap;">Penerbit</th>
+                                            <th style="white-space: nowrap;">Tahun Terbit</th>
+                                            <th style="white-space: nowrap;">Kelas</th>
+                                            <th style="white-space: nowrap;">Program Keahlian</th>
+                                            <th style="white-space: nowrap;">Tanggal Terima</th>
+                                            <th style="white-space: nowrap;">Jumlah</th>
+                                            <th style="white-space: nowrap;">Aksi</th>
                                         </tr>
                                     </tfoot>
                                 </table><br>
