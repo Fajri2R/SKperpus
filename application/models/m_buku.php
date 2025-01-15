@@ -9,6 +9,7 @@ class M_buku extends CI_Model
         $this->db->from('buku');
         $this->db->join('pengarang', 'buku.id_pengarang = pengarang.id_pengarang');
         $this->db->join('penerbit', 'buku.id_penerbit = penerbit.id_penerbit');
+        $this->db->order_by("nomor_induk", "asc");
         return $this->db->get()->result();
     }
 

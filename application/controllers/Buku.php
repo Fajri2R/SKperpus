@@ -16,6 +16,11 @@ class Buku extends CI_Controller
 
     public function index()
     {
+        // $cek = $this->m_buku->get_data_buku();
+        // echo "<pre>";
+        // print_r($cek);
+        // echo "</pre>";
+        // die;
         $isi['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $isi['title'] = 'Data Buku';
         $isi['title2'] = '<b>E</b>-Perpus';

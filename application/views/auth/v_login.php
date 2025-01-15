@@ -40,9 +40,9 @@
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>
                     <br><br>
-                    <!-- <div class="col-12">
-                        <a href="<?= base_url('auth/register') ?>" class="btn btn-secondary btn-block">Register</a>
-                    </div> -->
+                    <div class="col-12">
+                        <a href="<?= base_url('home') ?>" class="btn btn-secondary btn-block">Home</a>
+                    </div>
                     <!-- /.col -->
                 </div>
             </form>

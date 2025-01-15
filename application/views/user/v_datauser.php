@@ -59,9 +59,9 @@
                                                       <td><?= $row->jenkel ?></td>
                                                       <td><?= $row->alamat ?></td>
                                                       <td><?= $row->no_hp ?></td>
-                                                      <td style="width: 5%;">
-                                                          <a href="<?= base_url() ?>admin/edit/<?= $row->id_anggota; ?>" class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="left" title="Edit"><i class="fas fa-edit"></i></a>
-                                                          <a href="<?= base_url() ?>admin/hapus/<?= $row->id_anggota; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus user ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fas fa-trash"></i></a>
+                                                      <td style="width: 10%;">
+                                                          <a href="<?= base_url() ?>admin/edit/<?= $row->id_anggota; ?>" class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="left" title="Edit"><i class="fas fa-edit"></i> Edit</a>
+                                                          <a href="<?= base_url() ?>admin/hapus/<?= $row->id_anggota; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus user ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fas fa-trash"></i> Hapus</a>
                                                       </td>
                                                   </tr>
                                               <?php }
@@ -104,9 +104,9 @@
                                                       <td><?= $row->jenkel ?></td>
                                                       <td><?= $row->alamat ?></td>
                                                       <td><?= $row->no_hp ?></td>
-                                                      <td style="width:5%">
-                                                          <a href="<?= base_url() ?>admin/edit/<?= $row->id_anggota; ?>" class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="left" title="Edit"><i class="fas fa-edit"></i></a>
-                                                          <a href="<?= base_url() ?>admin/hapus/<?= $row->id_anggota; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus user ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fas fa-trash"></i></a>
+                                                      <td style="width:10%">
+                                                          <a href="<?= base_url() ?>admin/edit/<?= $row->id_anggota; ?>" class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="left" title="Edit"><i class="fas fa-edit"></i> Edit</a>
+                                                          <a href="<?= base_url() ?>admin/hapus/<?= $row->id_anggota; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus user ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fas fa-trash"></i> Hapus</a>
                                                       </td>
                                                   </tr>
                                               <?php }

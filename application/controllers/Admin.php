@@ -113,9 +113,7 @@ class Admin extends CI_Controller
 
             $query = $this->m_admin->update($id_anggota, $data);
             if ($query = true) {
-                $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
-                Akun berhasil diupdate
-              </div>');
+                $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Akun berhasil diupdate </div>');
                 redirect('admin/datauser');
             }
         }
@@ -126,9 +124,7 @@ class Admin extends CI_Controller
         if ($this->session->userdata('role_id') == '1') {
             $query = $this->m_admin->hapus($id);
             if ($query = true) {
-                $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">
-            Akun berhasil dihapus
-          </div>');
+                $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert"> Akun berhasil dihapus </div>');
                 redirect('admin/datauser');
             }
         } else {
@@ -219,9 +215,7 @@ class Admin extends CI_Controller
             ];
             $this->db->insert('user', $isi);
 
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
-            Akun berhasil dibuat
-          </div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"> Akun berhasil dibuat </div>');
             redirect('admin/datauser');
         }
     }

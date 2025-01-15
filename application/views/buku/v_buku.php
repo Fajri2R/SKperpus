@@ -57,9 +57,9 @@
                                                 <td style="width: 11%;"><?= $row->prog_keahlian ?></td>
                                                 <td style="width: 10%;"><?= slashdate_indo($row->tgl_terima) ?></td>
                                                 <td style="width: 5%;"><?= $row->jumlah ?></td>
-                                                <td style="width: 5%;">
-                                                    <a href="<?= base_url() ?>buku/edit/<?= $row->id_buku; ?>" class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="left" title="Edit"><i class="fas fa-edit"></i></a>
-                                                    <a href="<?= base_url() ?>buku/hapus/<?= $row->id_buku; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus data buku ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fas fa-trash"></i></a>
+                                                <td style="width: 10%;">
+                                                    <a href="<?= base_url() ?>buku/edit/<?= $row->id_buku; ?>" class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="left" title="Edit"><i class="fas fa-edit"></i> Edit</a>
+                                                    <a href="<?= base_url() ?>buku/hapus/<?= $row->id_buku; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin mau menghapus data buku ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
                                         <?php }

@@ -56,7 +56,7 @@
                                                     ?>
                                               </td>
                                               <td style="width:5%">
-                                                  <a href="<?= base_url() ?>pengembalian/hapus/<?= $row->id_pengembalian; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin mau menghapus data pengembalian ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fa fa-trash"></i></a>
+                                                  <a href="<?= base_url() ?>pengembalian/hapus/<?= $row->id_pengembalian; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin mau menghapus data pengembalian ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fa fa-trash"></i> Hapus</a>
                                               </td>
                                           </tr>
                                       <?php }

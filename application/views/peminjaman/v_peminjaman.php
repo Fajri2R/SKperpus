@@ -88,9 +88,9 @@
 
                                                 ?>
                                               <td style="width:5%">
-                                                  <a href="<?= $linkWA ?>" target="_blank" class="btn btn-success btn-xs" onclick="return confirm('Kirim notifikasi pengembalian buku ke anggota ini?');" data-toggle="tooltip" data-placement="left" title="Notifikasi"><i class="fab fa-whatsapp"></i></a>
-                                                  <a href="<?= base_url() ?>peminjaman/kembalikan/<?= $row->id_peminjaman; ?>" class="btn btn-primary btn-xs" onclick="return confirm('Yakin anggota ini sudah mengembalikan buku?');" data-toggle="tooltip" data-placement="left" title="Kembalikan"><i class="fa fa-undo"></i></a>
-                                                  <a href="<?= base_url() ?>peminjaman/hapus/<?= $row->id_peminjaman; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin mau menghapus data peminjaman ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fa fa-trash"></i></a>
+                                                  <a href="<?= $linkWA ?>" target="_blank" class="btn btn-success btn-xs" onclick="return confirm('Kirim notifikasi pengembalian buku ke anggota ini?');" data-toggle="tooltip" data-placement="left" title="Notifikasi"><i class="fab fa-whatsapp"></i> Notifikasi</a>
+                                                  <a href="<?= base_url() ?>peminjaman/kembalikan/<?= $row->id_peminjaman; ?>" class="btn btn-primary btn-xs" onclick="return confirm('Yakin anggota ini sudah mengembalikan buku?');" data-toggle="tooltip" data-placement="left" title="Kembalikan"><i class="fa fa-undo"></i> Kembalikan</a>
+                                                  <a href="<?= base_url() ?>peminjaman/hapus/<?= $row->id_peminjaman; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin mau menghapus data peminjaman ini?');" data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fa fa-trash"></i> Hapus</a>
                                               </td>
                                           </tr>
                                       <?php }
